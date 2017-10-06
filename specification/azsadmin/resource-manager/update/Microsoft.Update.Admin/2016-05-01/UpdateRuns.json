@@ -117,7 +117,7 @@
             "$ref": "Update.json#/parameters/ResourceGroupParameter"
           },
           {
-            "$ref": "Update.json#/parameters/UpdateLocationParameter"
+            "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
           },
           {
             "$ref": "Updates.json#/parameters/UpdateParameter"
