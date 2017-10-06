@@ -51,6 +51,9 @@
             "schema": {
               "$ref": "#/definitions/UpdateRunList"
             }
+          },
+          "x-ms-pageable": {
+            "nextLinkName": null
           }
         }
       }

@@ -91,6 +91,9 @@
               "$ref": "#/definitions/UpdateList"
             }
           }
+        },
+        "x-ms-pageable" : {
+          "nextLinkName" : null
         }
       }
     }
