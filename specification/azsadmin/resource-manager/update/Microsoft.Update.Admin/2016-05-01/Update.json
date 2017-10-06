@@ -2,8 +2,8 @@
  "swagger": "2.0",
  "info": {
   "version": "2016-05-01",
-  "title": "FabricAdminClient",
-  "description": "The Admin Fabric Management Client."
+  "title": "UpdateAdminClient",
+  "description": "The Update Admin Management Client."
  },
  "host": "adminmanagement.local.azurestack.external",
  "schemes": [
@@ -43,15 +43,6 @@
     }
    },
    "x-ms-azure-resource": true
-  },
-  "OperationStatusLocation": {
-   "description": "URI where you can poll for status of operation.",
-   "properties": {
-    "location": {
-     "description": "URI where you can poll for status of operation.",
-     "type": "string"
-    }
-   }
   }
  },
  "parameters": {
@@ -70,19 +61,12 @@
    "type": "string",
    "default": "2016-05-01"
   },
-  "LocationParameter": {
-   "description": "Location of the resource.",
-   "name": "location",
+  "ResourceGroupParameter": {
+   "description": "Resource group name.",
+   "name": "resourceGroup",
    "in": "path",
+   "type": "string",
    "required": true,
-   "type": "string",
-   "x-ms-parameter-location": "method"
-  },
-  "FilterParameter": {
-   "description": "OData filter parameter.",
-   "name": "$filter",
-   "in": "query",
-   "type": "string",
    "x-ms-parameter-location": "method"
   }
  },

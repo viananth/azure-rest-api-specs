@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Edge gateway operation endpoints and objects.",
-    "title": "FabricAdminClient",
+    "description": "Update location operation endpoints and objects.",
+    "title": "UpdateAdminClient",
     "version": "2016-05-01"
   },
   "host": "adminmanagement.local.azurestack.external",
@@ -16,18 +16,18 @@
     "application/json"
   ],
   "paths": {
-    "subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/": {
+    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/": {
       "get": {
         "x-ms-examples": {
           "Get the list of update locations.": {
-            "$ref": "./examples/UpdateLocation/List.json"
+            "$ref": "./examples/UpdateLocations/List.json"
           }
         },
         "tags": [
           "UpdateLocations"
         ],
         "description": "Get the list of update locations.",
-        "operationId": "UpdateLocations_Get",
+        "operationId": "UpdateLocations_List",
         "parameters": [
           {
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
@@ -49,17 +49,17 @@
         }
       }
     },
-    "subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{locationName}": {
+    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}": {
       "get": {
         "x-ms-examples": {
-          "Get the list of update locations.": {
-            "$ref": "./examples/UpdateLocation/List.json"
+          "Get an update location based on name.": {
+            "$ref": "./examples/UpdateLocations/Get.json"
           }
         },
         "tags": [
           "UpdateLocations"
         ],
-        "description": "Get the list of update locations.",
+        "description": "Get an update location based on name.",
         "operationId": "UpdateLocations_Get",
         "parameters": [
           {
@@ -69,7 +69,7 @@
             "$ref": "Update.json#/parameters/ResourceGroupParameter"
           },
           {
-            "$ref": "Update.json#/parameters/UpdateLocationParameter"
+            "$ref": "#/parameters/UpdateLocationParameter"
           },
           {
             "$ref": "Update.json#/parameters/ApiVersionParameter"
@@ -79,77 +79,93 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/UpdateLocationList"
+              "$ref": "#/definitions/UpdateLocation"
             }
           }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
         }
       }
     }
   },
   "definitions": {
-    "EdgeGateway": {
-      "description": "This resource represents a gateway, which provides the configuration needed to provide gateway services to virtual networks.",
+    "UpdateLocation": {
+      "description": "Information related to a locations update status.",
       "type": "object",
       "properties": {
         "properties": {
-          "description": "Model which holds information related to edge gateways.",
-          "$ref": "#/definitions/EdgeGatewayModel",
+          "description": "Model which holds information related to update location.",
+          "$ref": "#/definitions/UpdateLocationModel",
           "x-ms-client-flatten": true
         }
       },
       "allOf": [
         {
-          "$ref": "Fabric.json#/definitions/Resource"
+          "$ref": "Update.json#/definitions/Resource"
         }
       ]
     },
-    "EdgeGatewayModel": {
-      "description": "Model which holds information related to edge gateways.",
+    "UpdateLocationModel": {
+      "description": "Model which holds information related to update location.",
       "type": "object",
       "properties": {
-        "state": {
-          "description": "The current state of the edge gateway.",
+        "currentVersion": {
+          "description": "Current version of your AzureStack deployment.",
           "type": "string"
         },
-        "totalCapacity": {
-          "description": "The total network capacity.",
-          "format": "int64",
-          "type": "integer"
+        "currentOemVersion": {
+          "description": "Current OEM version of your AzureStack deployment.",
+          "type": "string"
         },
-        "availableCapacity": {
-          "description": "The available network capacity.",
-          "format": "int64",
-          "type": "integer"
+        "lastUpdated": {
+          "description": "Date of last update.",
+          "format": "date-time",
+          "type": "string"
         },
-        "numberOfConnections": {
-          "description": "The current number of connections.",
-          "format": "int32",
-          "type": "integer"
+        "state": {
+          "description": "State with respect to the update.",
+          "$ref": "#/definitions/RegionUpdateState"
         }
       }
     },
-    "EdgeGatewayList": {
-      "description": "Pageable list of edge gateways.",
+    "RegionUpdateState": {
+      "description": "State of the region in regard to update.",
+      "type": "string",
+      "enum": [
+        "Unknown",
+        "AppliedSuccessfully",
+        "AppliedUpdateAvailableSuccessfully",
+        "UpdateInProgress",
+        "UpdateFailed"
+      ],
+      "x-ms-enum": {
+        "name": "RegionUpdateState",
+        "modelAsString": true
+      }
+    },
+    "UpdateLocationList": {
+      "description": "The list of update locations.",
       "type": "object",
       "properties": {
+        "nextLink": {
+          "description": "The link to get the next page of update locations.",
+          "type": "string"
+        },
         "value": {
-          "description": "Array of edge gateways.",
+          "description": "The list of update locations.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/EdgeGateway"
+            "$ref": "#/definitions/UpdateLocation"
           }
-        },
-        "nextLink": {
-          "description": "URI to the next page.",
-          "type": "string"
         }
       }
     }
   },
   "parameters": {
-    "EdgeGatewayParameter": {
-      "name": "edgeGateway",
-      "description": "name of the edge gateway.",
+    "UpdateLocationParameter": {
+      "name": "updateLocation",
+      "description": "The name of the update location.",
       "in": "path",
       "required": true,
       "type": "string",

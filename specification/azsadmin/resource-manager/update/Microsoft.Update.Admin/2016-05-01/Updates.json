@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Volume operation endpoints and objects.",
-    "title": "FabricAdminClient",
+    "description": "Update operation endpoints and objects.",
+    "title": "UpdateAdminClient",
     "version": "2016-05-01"
   },
   "host": "adminmanagement.local.azurestack.external",
@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates": {
+    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates": {
       "get": {
         "x-ms-examples": {
           "Get the list of updates at an update locations.": {
@@ -36,10 +36,10 @@
             "$ref": "Update.json#/parameters/ResourceGroupParameter"
           },
           {
-            "$ref": "Update.json#/parameters/UpdateLocationParameter"
+            "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
           },
           {
-            "$ref": "Fabric.json#/parameters/ApiVersionParameter"
+            "$ref": "Update.json#/parameters/ApiVersionParameter"
           }
         ],
         "responses": {
@@ -49,56 +49,23 @@
               "$ref": "#/definitions/UpdateList"
             }
           }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
         }
       }
     },
-    "subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates{update}/updateRuns": {
+    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}": {
       "get": {
         "x-ms-examples": {
-          "Get the list of updates at an update locations.": {
-            "$ref": "./examples/Updates/Runs.json"
+          "Get a specific update at an update location.": {
+            "$ref": "./examples/Updates/Get.json"
           }
         },
         "tags": [
           "Updates"
         ],
-        "description": "Get the list of update locations",
-        "operationId": "Updates_Runs",
-        "parameters": [
-          {
-            "$ref": "Update.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
-          },
-          {
-            "$ref": "Update.json#/parameters/UpdateLocationParameter"
-          },
-          {
-            "$ref": "Fabric.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/UpdateList"
-            }
-          }
-        }
-      }
-    },
-    "subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns/{runId}": {
-      "get": {
-        "x-ms-examples": {
-          "Get the list of updates at an update locations.": {
-            "$ref": "./examples/Updates/List.json"
-          }
-        },
-        "tags": [
-          "Updates"
-        ],
-        "description": "Get the list of update locations",
+        "description": "Get a specific update at an update location.",
         "operationId": "Updates_Get",
         "parameters": [
           {
@@ -108,46 +75,13 @@
             "$ref": "Update.json#/parameters/ResourceGroupParameter"
           },
           {
-            "$ref": "Update.json#/parameters/UpdateLocationParameter"
+            "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
           },
           {
-            "$ref": "Fabric.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/UpdateList"
-            }
-          }
-        }
-      }
-    },
-    "subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{updateVersion}": {
-      "get": {
-        "x-ms-examples": {
-          "Get the list of updates at an update locations.": {
-            "$ref": "./examples/Updates/List.json"
-          }
-        },
-        "tags": [
-          "Updates"
-        ],
-        "description": "Get the list of update locations",
-        "operationId": "Updates_List",
-        "parameters": [
-          {
-            "$ref": "Update.json#/parameters/SubscriptionIdParameter"
+            "$ref": "Updates.json#/parameters/UpdateParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
-          },
-          {
-            "$ref": "Update.json#/parameters/UpdateLocationParameter"
-          },
-          {
-            "$ref": "Fabric.json#/parameters/ApiVersionParameter"
+            "$ref": "Update.json#/parameters/ApiVersionParameter"
           }
         ],
         "responses": {
@@ -162,68 +96,141 @@
     }
   },
   "definitions": {
-    "Volume": {
-      "description": "Representation of a volume resource.",
+    "Update": {
+      "description": "Information pertaining to an update.",
       "type": "object",
       "properties": {
         "properties": {
-          "description": "Properties of a volume.",
           "x-ms-client-flatten": true,
-          "$ref": "#/definitions/VolumeModel"
+          "description": "Properties of an update.",
+          "$ref": "#/definitions/UpdateModel"
         }
       },
       "allOf": [
         {
-          "$ref": "Fabric.json#/definitions/Resource"
+          "$ref": "Update.json#/definitions/Resource"
         }
       ]
     },
-    "VolumeModel": {
-      "description": "Properties of a volume.",
-      "type": "object",
+    "UpdateModel": {
+      "description": "Properties of an update.",
       "properties": {
-        "fileSystem": {
-          "description": "Filesystem type.",
+        "dateAvailable": {
+          "description": "Date uploaded by provider.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "installedDate": {
+          "description": "Date update was installed.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "description": "Description of the update.",
           "type": "string"
         },
-        "remainingSizeGB": {
-          "description": "Amount of free space in GB.",
-          "format": "int32",
-          "type": "integer"
+        "state": {
+          "description": "Current state of the update.",
+          "$ref": "#/definitions/UpdateState"
         },
-        "sizeGB": {
-          "description": "Total amount of space in GB.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "volumeLabel": {
-          "description": "Volume label.",
+        "kbLink": {
+          "description": "Link to the KB article about the update.",
           "type": "string"
+        },
+        "minVersionRequired": {
+          "description": "The minimum version required to install.",
+          "type": "string"
+        },
+        "packagePath": {
+          "description": "Path to the update package.",
+          "type": "string"
+        },
+        "packageSizeInMb": {
+          "description": "Size of update package.",
+          "type": "integer",
+          "format": "int64"
+        },
+        "updateName": {
+          "description": "Name of the update.",
+          "type": "string"
+        },
+        "version": {
+          "description": "Version of the update.",
+          "type": "string"
+        },
+        "updateOemFile": {
+          "description": "OEM version of the update.",
+          "type": "string"
+        },
+        "publisher": {
+          "description": "Publisher of the update.",
+          "type": "string"
+        },
+        "packageType": {
+          "description": "Describes who released update.",
+          "$ref": "#/definitions/PackageType"
         }
       }
     },
-    "VolumeList": {
-      "description": "Pageable list of volumes.",
-      "type": "object",
+    "UpdateList": {
+      "description": "List of updates.",
       "properties": {
+        "nextLink": {
+          "description": "URI to the next page of updates.",
+          "type": "string"
+        },
         "value": {
-          "description": "List of volumes on this page.",
+          "description": "List of updates.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Volume"
+            "$ref": "#/definitions/Update"
           }
-        },
-        "nextLink": {
-          "description": "URI to the next page.",
-          "type": "string"
         }
+      }
+    },
+    "PackageType": {
+      "description": "Describes who released update.",
+      "type": "string",
+      "enum": [
+        "Microsoft",
+        "Oem",
+        "Combined"
+      ],
+      "x-ms-enum": {
+        "name": "PackageType",
+        "modelAsString": true
+      }
+    },
+    "UpdateState": {
+      "description": "State of the update.",
+      "type": "string",
+      "enum": [
+        "HasPrerequisite",
+        "Obsolete",
+        "Ready",
+        "NotApplicableBecauseAnotherUpdateIsInProgress",
+        "Installed",
+        "Failed",
+        "Installing"
+      ],
+      "x-ms-enum": {
+        "name": "UpdateState",
+        "modelAsString": true
       }
     }
   },
   "parameters": {
-    "VolumeParameter": {
-      "name": "volume",
-      "description": "Name of the volume.",
+    "UpdateParameter": {
+      "name": "update",
+      "description": "Name of the update.",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "RunIdParameter": {
+      "name": "runId",
+      "description": "Update run identifier.",
       "in": "path",
       "required": true,
       "type": "string",
