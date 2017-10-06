@@ -54,46 +54,43 @@
           "nextLinkName": "nextLink"
         }
       }
-    },
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}": {
-      "get": {
-        "x-ms-examples": {
-          "Get a specific update at an update location.": {
-            "$ref": "./examples/Updates/Get.json"
-          }
+    }
+  },
+  "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}": {
+    "get": {
+      "x-ms-examples": {
+        "Get a specific update at an update location.": {
+          "$ref": "./examples/Updates/Get.json"
+        }
+      },
+      "tags": [
+        "Updates"
+      ],
+      "description": "Get a specific update at an update location.",
+      "operationId": "Updates_Get",
+      "parameters": [
+        {
+          "$ref": "Update.json#/parameters/SubscriptionIdParameter"
         },
-        "tags": [
-          "Updates"
-        ],
-        "description": "Get a specific update at an update location.",
-        "operationId": "Updates_Get",
-        "parameters": [
-          {
-            "$ref": "Update.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
-          },
-          {
-            "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
-          },
-          {
-            "$ref": "Updates.json#/parameters/UpdateParameter"
-          },
-          {
-            "$ref": "Update.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/UpdateList"
-            }
-          }
+        {
+          "$ref": "Update.json#/parameters/ResourceGroupParameter"
         },
-        "x-ms-pageable" : {
-          "nextLinkName" : null
+        {
+          "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
+        },
+        {
+          "$ref": "Updates.json#/parameters/UpdateParameter"
+        },
+        {
+          "$ref": "Update.json#/parameters/ApiVersionParameter"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "$ref": "#/definitions/UpdateList"
+          }
         }
       }
     }
