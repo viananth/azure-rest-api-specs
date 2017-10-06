@@ -19,7 +19,7 @@
     "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates{update}/updateRuns": {
       "get": {
         "x-ms-examples": {
-          "Get the list of update rune.": {
+          "Get the list of update run.": {
             "$ref": "./examples/UpdateRuns/List.json"
           }
         },
@@ -134,9 +134,6 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
-          },
-          "202": {
             "description": "OK"
           }
         }

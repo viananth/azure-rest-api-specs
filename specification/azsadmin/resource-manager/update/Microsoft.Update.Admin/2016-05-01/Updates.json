@@ -228,7 +228,7 @@
       }
     },
     "PackageType": {
-      "description": "Describes who released update.",
+      "description": "Describes the components that will be updated.",
       "type": "string",
       "enum": [
         "Microsoft",
