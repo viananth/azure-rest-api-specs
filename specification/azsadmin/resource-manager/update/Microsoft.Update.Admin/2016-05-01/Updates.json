@@ -97,14 +97,14 @@
     "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/Apply": {
       "post": {
         "x-ms-examples": {
-          "Get a specific update at an update location.": {
-            "$ref": "./examples/Updates/Get.json"
+          "Apply a specific update at an update location.": {
+            "$ref": "./examples/Updates/Update.json"
           }
         },
         "tags": [
           "Updates"
         ],
-        "description": "Get a specific update at an update location.",
+        "description": "Apply a specific update at an update location.",
         "operationId": "Updates_Update",
         "parameters": [
           {
