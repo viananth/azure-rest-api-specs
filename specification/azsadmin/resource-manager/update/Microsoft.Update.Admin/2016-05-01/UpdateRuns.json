@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates{update}/updateRuns": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates{update}/updateRuns": {
       "get": {
         "x-ms-examples": {
           "Get the list of update run.": {
@@ -33,7 +33,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -58,7 +58,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns/{runId}": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns/{runId}": {
       "get": {
         "x-ms-examples": {
           "Get an update run.": {
@@ -75,7 +75,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -100,7 +100,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns/{runId}/rerun": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns/{runId}/rerun": {
       "post": {
         "x-ms-examples": {
           "Rerun an update.": {
@@ -117,7 +117,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
