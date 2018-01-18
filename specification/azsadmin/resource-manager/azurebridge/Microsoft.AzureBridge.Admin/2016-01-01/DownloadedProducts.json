@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a list of downloaded products.": {
-                        "$ref": "./examples/DownloadedProduct/List.json"
+                        "$ref": "./examples/DownloadedProducts/List.json"
                     }
                 },
                 "description": "Get a list of downloaded products.",
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a list of downloaded products.": {
-                        "$ref": "./examples/DownloadedProduct/Get.json"
+                        "$ref": "./examples/DownloadedProducts/Get.json"
                     }
                 },
                 "description": "Get a downloaded product.",

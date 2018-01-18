@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Return product name.": {
-                        "$ref": "./examples/Activation/List.json"
+                        "$ref": "./examples/Activations/List.json"
                     }
                 },
                 "description": "Return product name.",
@@ -53,7 +53,7 @@
             "get": {
                 "x-ms-examples": {
                     "Return product name.": {
-                        "$ref": "./examples/Activation/Get.json"
+                        "$ref": "./examples/Activations/Get.json"
                     }
                 },
                 "description": "Return product name.",
@@ -90,7 +90,7 @@
             "put": {
                 "x-ms-examples": {
                     "Return product name.": {
-                        "$ref": "./examples/Activation/Get.json"
+                        "$ref": "./examples/Activations/Get.json"
                     }
                 },
                 "description": "Create a new activation.",
@@ -130,7 +130,7 @@
             "delete": {
                 "x-ms-examples": {
                     "Return product name.": {
-                        "$ref": "./examples/Activation/Get.json"
+                        "$ref": "./examples/Activations/Get.json"
                     }
                 },
                 "description": "Delete an activation.",
