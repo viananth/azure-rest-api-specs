@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all quotas": {
-                        "$ref": "./examples/Quota/QuotaList.json"
+                        "$ref": "./examples/Quota/List.json"
                     }
                 },
                 "tags": [
@@ -63,7 +63,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a quota by name": {
-                        "$ref": "./examples/Quota/QuotaGet.json"
+                        "$ref": "./examples/Quota/Get.json"
                     }
                 },
                 "tags": [
@@ -100,7 +100,7 @@
             "put": {
                 "x-ms-examples": {
                     "Create or update a new quota": {
-                        "$ref": "./examples/Quota/QuotaCreateOrUpdate.json"
+                        "$ref": "./examples/Quota/Put.json"
                     }
                 },
                 "tags": [
@@ -143,7 +143,7 @@
             "delete": {
                 "x-ms-examples": {
                     "Delete a quota by name.": {
-                        "$ref": "./examples/Quota/QuotaDelete.json"
+                        "$ref": "./examples/Quota/Delete.json"
                     }
                 },
                 "tags": [
@@ -204,37 +204,37 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "MaxVnetsPerSubscription": {
+                "maxVnetsPerSubscription": {
                     "description": "Maximum number of Virtual Networks a tenant subscription can provision.",
                     "type": "integer",
                     "format": "int64"
                 },
-                "MaxVirtualNetworkGatewaysPerSubscription": {
+                "maxVirtualNetworkGatewaysPerSubscription": {
                     "description": "Maximum number of Virtual Network Gateways a tenant subscription can provision.",
                     "type": "integer",
                     "format": "int64"
                 },
-                "MaxVirtualNetworkGatewayConnectionsPerSubscription": {
+                "maxVirtualNetworkGatewayConnectionsPerSubscription": {
                     "description": "Maximum number of Virtual Network Gateway Connections a tenant subscription can provision.",
                     "type": "integer",
                     "format": "int64"
                 },
-                "MaxLoadBalancersPerSubscription": {
+                "maxLoadBalancersPerSubscription": {
                     "description": "Maximum number of Load Balancers a tenant subscription can provision.",
                     "type": "integer",
                     "format": "int64"
                 },
-                "MaxNicsPerSubscription": {
+                "maxNicsPerSubscription": {
                     "description": "Maximum number of NICs a tenant subscription can provision.",
                     "type": "integer",
                     "format": "int64"
                 },
-                "MaxSecurityGroupsPerSubscription": {
+                "maxSecurityGroupsPerSubscription": {
                     "description": "Maximum number of Security Groups a tenant subscription can provision.",
                     "type": "integer",
                     "format": "int64"
                 },
-                "MigrationPhase": {
+                "migrationPhase": {
                     "description": "State of migration such as None, Prepare, Commit and Abort.",
                     "$ref": "#/definitions/MigrationPhase"
                 }

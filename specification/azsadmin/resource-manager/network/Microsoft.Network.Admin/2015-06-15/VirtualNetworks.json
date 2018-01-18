@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "List of all virtual networks": {
-                        "$ref": "./examples/VirtualNetworks/VirtualNetworksList.json"
+                        "$ref": "./examples/VirtualNetworks/List.json"
                     }
                 },
                 "tags": [
@@ -68,7 +68,7 @@
     },
     "definitions": {
         "VirtualNetwork": {
-            "description": "This represents a Virtual Networks.",
+            "description": "This represents a Virtual Network.",
             "type": "object",
             "properties": {
                 "properties": {

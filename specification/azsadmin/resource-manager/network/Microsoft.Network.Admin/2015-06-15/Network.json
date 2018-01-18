@@ -20,14 +20,14 @@
             "get": {
                 "x-ms-examples": {
                     "Get overview of the state of the network resource provider": {
-                        "$ref": "./examples/Network/ResourceProviderState.json"
+                        "$ref": "./examples/ResourceProviderState/Get.json"
                     }
                 },
                 "tags": [
                     "Network"
                 ],
                 "description": "Get an overview of the state of the network resource provider.",
-                "operationId": "ResourceProviderState",
+                "operationId": "ResourceProviderState_Get",
                 "parameters": [
                     {
                         "$ref": "Network.json#/parameters/SubscriptionIdParameter"
