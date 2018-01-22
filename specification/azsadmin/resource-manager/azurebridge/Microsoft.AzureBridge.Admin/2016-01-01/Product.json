@@ -78,7 +78,10 @@
                         "schema": {
                             "$ref": "#/definitions/ProductResource"
                         }
-                    }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }                    
                 },
                 "produces": [
                     "application/json"

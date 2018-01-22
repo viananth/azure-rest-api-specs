@@ -78,7 +78,10 @@
                         "schema": {
                             "$ref": "#/definitions/ActivationResource"
                         }
-                    }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }                    
                 },
                 "produces": [
                     "application/json"
