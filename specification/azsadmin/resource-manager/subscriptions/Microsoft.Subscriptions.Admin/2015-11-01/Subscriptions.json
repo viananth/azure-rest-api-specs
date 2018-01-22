@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/subscriptions/List.json"
+                        "$ref": "./examples/Subscriptions/List.json"
                     }
                 },
                 "description": "Get the list of subscriptions.",
@@ -47,7 +47,7 @@
             "post": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/subscriptions/List.json"
+                        "$ref": "./examples/Subscriptions/List.json"
                     }
                 },
                 "description": "Get the list of subscriptions.",
@@ -80,7 +80,7 @@
             "post": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/subscriptions/List.json"
+                        "$ref": "./examples/Subscriptions/List.json"
                     }
                 },
                 "description": "Get the list of subscriptions.",
@@ -152,7 +152,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/subscriptions/List.json"
+                        "$ref": "./examples/Subscriptions/List.json"
                     }
                 },
                 "description": "Get the list of subscriptions.",
@@ -186,7 +186,7 @@
             "put": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/subscriptions/List.json"
+                        "$ref": "./examples/Subscriptions/List.json"
                     }
                 },
                 "description": "Get the list of subscriptions.",
