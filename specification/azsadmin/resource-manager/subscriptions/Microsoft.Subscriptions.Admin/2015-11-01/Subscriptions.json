@@ -13,11 +13,11 @@
         "/providers/Microsoft.Subscriptions.Admin/operations": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                    "Get the list of subscriptions.": {
+                        "$ref": "./examples/subscriptions/List.json"
                     }
                 },
-                "description": "Get the list of offers.",
+                "description": "Get the list of subscriptions.",
                 "tags": [
                     "Subscriptions"
                 ],
@@ -46,11 +46,11 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/updateEncryption": {
             "post": {
                 "x-ms-examples": {
-                    "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                    "Get the list of subscriptions.": {
+                        "$ref": "./examples/subscriptions/List.json"
                     }
                 },
-                "description": "Get the list of offers.",
+                "description": "Get the list of subscriptions.",
                 "tags": [
                     "Subscriptions"
                 ],
@@ -79,11 +79,11 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/restoreData": {
             "post": {
                 "x-ms-examples": {
-                    "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                    "Get the list of subscriptions.": {
+                        "$ref": "./examples/subscriptions/List.json"
                     }
                 },
-                "description": "Get the list of offers.",
+                "description": "Get the list of subscriptions.",
                 "tags": [
                     "Subscriptions"
                 ],
@@ -112,11 +112,11 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/subscriptions": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                    "Get the list of subscriptions.": {
+                        "$ref": "./examples/Subscrptions/List.json"
                     }
                 },
-                "description": "Get the list of offers.",
+                "description": "Get the list of subscriptions.",
                 "tags": [
                     "Subscriptions"
                 ],
@@ -151,11 +151,11 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/subscriptions/{subscription}": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                    "Get the list of subscriptions.": {
+                        "$ref": "./examples/subscriptions/List.json"
                     }
                 },
-                "description": "Get the list of offers.",
+                "description": "Get the list of subscriptions.",
                 "tags": [
                     "Subscriptions"
                 ],
@@ -185,11 +185,11 @@
             },
             "put": {
                 "x-ms-examples": {
-                    "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                    "Get the list of subscriptions.": {
+                        "$ref": "./examples/subscriptions/List.json"
                     }
                 },
-                "description": "Get the list of offers.",
+                "description": "Get the list of subscriptions.",
                 "tags": [
                     "Subscriptions"
                 ],
@@ -225,11 +225,11 @@
             },
             "delete": {
                 "x-ms-examples": {
-                    "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                    "Get the list of subscriptions.": {
+                        "$ref": "./examples/subscriptions/List.json"
                     }
                 },
-                "description": "Get the list of offers.",
+                "description": "Get the list of subscriptions.",
                 "tags": [
                     "Subscriptions"
                 ],
