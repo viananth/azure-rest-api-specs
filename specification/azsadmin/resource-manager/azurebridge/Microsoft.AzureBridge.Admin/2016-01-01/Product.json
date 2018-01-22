@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Return product name.": {
-                        "$ref": "./examples/Products/List.json"
+                        "$ref": "./examples/Product/List.json"
                     }
                 },
                 "description": "Return product name.",
@@ -53,7 +53,7 @@
             "get": {
                 "x-ms-examples": {
                     "Return product name.": {
-                        "$ref": "./examples/Products/List.json"
+                        "$ref": "./examples/Product/List.json"
                     }
                 },
                 "description": "Return product name.",
