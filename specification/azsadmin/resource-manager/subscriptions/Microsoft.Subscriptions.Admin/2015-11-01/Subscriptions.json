@@ -113,7 +113,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/Subscrptions/List.json"
+                        "$ref": "./examples/Subscriptions/List.json"
                     }
                 },
                 "description": "Get the list of subscriptions.",
