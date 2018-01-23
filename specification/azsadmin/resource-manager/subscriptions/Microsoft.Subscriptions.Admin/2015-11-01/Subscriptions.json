@@ -424,19 +424,7 @@
             ],
             "x-ms-enum": {
                 "name": "ResourceManagerType",
-                "modelAsString": true,
-                "values": [
-                    {
-                        "description": "The default/user-facing resource manager.",
-                        "name": "Default",
-                        "value": "Default"
-                    },
-                    {
-                        "description": "The admin resource manager.",
-                        "name": "Admin",
-                        "value": "Admin"
-                    }
-                ]
+                "modelAsString": true
             }
         },
         "SubscriptionState": {
