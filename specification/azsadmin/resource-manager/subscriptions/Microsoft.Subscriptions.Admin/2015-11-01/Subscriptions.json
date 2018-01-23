@@ -440,39 +440,7 @@
             ],
             "x-ms-enum": {
                 "name": "SubscriptionState",
-                "modelAsString": true,
-                "values": [
-                    {
-                        "description": "The subscription state is unknown.",
-                        "name": "NotDefined",
-                        "value": "0"
-                    },
-                    {
-                        "description": "The subscription is enabled.",
-                        "name": "Enabled",
-                        "value": "1"
-                    },
-                    {
-                        "description": "The subscription has been warned.",
-                        "name": "Warned",
-                        "value": "2"
-                    },
-                    {
-                        "description": "The subscription is past due.",
-                        "name": "PastDue",
-                        "value": "3"
-                    },
-                    {
-                        "description": "The subscription is disabled.",
-                        "name": "Disabled",
-                        "value": "4"
-                    },
-                    {
-                        "description": "The subscription is deleted.",
-                        "name": "Deleted",
-                        "value": "5"
-                    }
-                ]
+                "modelAsString": true
             }
         },
         "Metric": {
