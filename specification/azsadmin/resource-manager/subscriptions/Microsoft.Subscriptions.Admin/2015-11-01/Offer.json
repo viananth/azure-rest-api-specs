@@ -516,7 +516,6 @@
             ],
             "x-ms-enum": {
                 "name": "PlanLink",
-                "modelAsString": true,
                 "values": [
                     {
                         "description": "The plan link type is not specified or is unknown.",
