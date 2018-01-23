@@ -516,23 +516,7 @@
             ],
             "x-ms-enum": {
                 "name": "PlanLink",
-                "values": [
-                    {
-                        "description": "The plan link type is not specified or is unknown.",
-                        "name": "None",
-                        "value": "None"
-                    },
-                    {
-                        "description": "The plan is linked to the base collection of the subscribed offer.",
-                        "name": "Base",
-                        "value": "Base"
-                    },
-                    {
-                        "description": "The plan is linked to the add-on collection of the subscribed offer.",
-                        "name": "Addon",
-                        "value": "Addon"
-                    }
-                ]
+                "modelAsString": true
             }
         }
     },
