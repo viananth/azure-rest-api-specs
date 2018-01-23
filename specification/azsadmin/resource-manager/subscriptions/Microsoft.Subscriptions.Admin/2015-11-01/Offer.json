@@ -521,17 +521,17 @@
                     {
                         "description": "The plan link type is not specified or is unknown.",
                         "name": "None",
-                        "value": "0"
+                        "value": "None"
                     },
                     {
                         "description": "The plan is linked to the base collection of the subscribed offer.",
                         "name": "Base",
-                        "value": "1"
+                        "value": "Base"
                     },
                     {
                         "description": "The plan is linked to the add-on collection of the subscribed offer.",
                         "name": "Addon",
-                        "value": "2"
+                        "value": "Addon"
                     }
                 ]
             }
