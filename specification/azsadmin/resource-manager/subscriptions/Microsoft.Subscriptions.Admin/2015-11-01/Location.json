@@ -43,10 +43,7 @@
                 ],
                 "consumes": [
                     "application/json"
-                ],
-                "x-ms-pageable": {
-                    "nextLink": null
-                }
+                ]
             }
         },
         "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/locations/{location}": {
