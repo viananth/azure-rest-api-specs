@@ -429,12 +429,12 @@
                     {
                         "description": "The default/user-facing resource manager.",
                         "name": "Default",
-                        "value": "0"
+                        "value": "Default"
                     },
                     {
                         "description": "The admin resource manager.",
                         "name": "Admin",
-                        "value": "1"
+                        "value": "Admin"
                     }
                 ]
             }
