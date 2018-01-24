@@ -47,7 +47,7 @@
             "post": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/Subscriptions/List.json"
+                        "$ref": "./examples/Subscriptions/UpdateEncryption.json"
                     }
                 },
                 "description": "Get the list of subscriptions.",
@@ -83,7 +83,7 @@
                         "$ref": "./examples/Subscriptions/List.json"
                     }
                 },
-                "description": "Get the list of subscriptions.",
+                "description": "Restores the data",
                 "tags": [
                     "Subscriptions"
                 ],
@@ -152,10 +152,10 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/Subscriptions/List.json"
+                        "$ref": "./examples/Subscriptions/Get.json"
                     }
                 },
-                "description": "Get the list of subscriptions.",
+                "description": "Get a specified subscription.",
                 "tags": [
                     "Subscriptions"
                 ],
@@ -174,6 +174,9 @@
                 "responses": {
                     "200": {
                         "description": "OK"
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [
@@ -209,6 +212,11 @@
                     }
                 ],
                 "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/Subscription"
+                        },
                     "200": {
                         "description": "OK",
                         "schema": {
@@ -226,7 +234,7 @@
             "delete": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/Subscriptions/List.json"
+                        "$ref": "./examples/Subscriptions/Delete.json"
                     }
                 },
                 "description": "Get the list of subscriptions.",

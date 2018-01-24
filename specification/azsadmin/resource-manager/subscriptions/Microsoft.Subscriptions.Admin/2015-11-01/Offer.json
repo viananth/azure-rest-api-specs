@@ -164,11 +164,16 @@
                     }
                 ],
                 "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/Offer"
+                        },
                     "200": {
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/Offer"
-                        }
+                        }                        
                     }
                 },
                 "produces": [

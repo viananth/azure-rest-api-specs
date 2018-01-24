@@ -166,7 +166,12 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/DirectoryTenant"
-                        }
+                        },
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/DirectoryTenant"
+                        }                        
                     }
                 },
                 "produces": [

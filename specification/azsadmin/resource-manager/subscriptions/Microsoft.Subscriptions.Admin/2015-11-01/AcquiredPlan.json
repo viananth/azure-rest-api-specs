@@ -167,7 +167,12 @@
                         "schema": {
                             "$ref": "#/definitions/AcquiredPlan"
                         }
-                    }
+                    },
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/AcquiredPlan"
+                        }
                 },
                 "produces": [
                     "application/json"
