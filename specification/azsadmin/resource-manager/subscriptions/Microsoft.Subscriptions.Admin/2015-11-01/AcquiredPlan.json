@@ -124,7 +124,8 @@
                 "responses": {
                     "200": {
                         "description": "OK"
-                    }
+                    },
+                    204 No Content                    
                 },
                 "produces": [
                     "application/json"
