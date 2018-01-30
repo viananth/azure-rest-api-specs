@@ -133,10 +133,11 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "201": {
+            "description": "Accepted"
           }
-        }
+        },
+        "x-ms-long-running-operation": true
       }
     }
   },
