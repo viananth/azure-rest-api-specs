@@ -1,0 +1,22 @@
+{
+    "parameters": {
+        "api-version": "2016-05-01"
+    },
+    "responses": {
+        "200": {
+            "body": {
+                "value": [
+                    {
+                        "name": "Microsoft.Update.Admin/updateLocations/read",
+                        "display": {
+                            "provider": "Microsoft Update Administration Service",
+                            "resource": "Update Locations",
+                            "operation": "Get Update Locations",
+                            "description": "Gets the update locations."
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

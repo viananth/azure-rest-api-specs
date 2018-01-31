@@ -133,7 +133,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "202": {
             "description": "Accepted"
           }
         },
