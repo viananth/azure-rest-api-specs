@@ -134,6 +134,14 @@
             "required": true,
             "type": "string"
         },
+        "ResourceGroupParameter": {
+            "description": "The resource group the resource is located under.",
+            "name": "resourceGroup",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "x-ms-parameter-location": "method"
+        },
         "ApiVersionParameter": {
             "name": "api-version",
             "in": "query",
