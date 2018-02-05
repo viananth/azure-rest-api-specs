@@ -115,7 +115,7 @@
                 },
                 "productProperties": {
                     "description": "the product properties. At the moment only VirtualMachineProductProperties is allowed.",
-                    "type": "string"
+                    "$ref": "#/definitions/ProductProperties"
                 }
             }
         },
@@ -143,6 +143,16 @@
                     "description": "The small (40x40) icon relative path.",
                     "type": "string"
                 }                                
+            }
+        },
+        "ProductProperties": {
+            "description": "Additional properties of the product",
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "The version of the product",
+                    "type": "string"
+                }
             }
         },
         "ProductLink": {

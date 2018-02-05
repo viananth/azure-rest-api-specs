@@ -58,7 +58,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.AzureBridge.Admin/activations/{activationName}/downloadedProducts/{productName}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of downloaded products.": {
+                    "Gets the specified downloaded product.": {
                         "$ref": "./examples/DownloadedProduct/Get.json"
                     }
                 },
@@ -101,7 +101,54 @@
                 "consumes": [
                     "application/json"
                 ]
-            }
+            },
+            "delete": {
+                "x-ms-examples": {
+                    "Deletes the specified downloaded product.": {
+                        "$ref": "./examples/DownloadedProduct/Delete.json"
+                    }
+                },
+                "description": "Delete a downloaded product.",
+                "tags": [
+                    "DownloadedProducts"
+                ],
+                "operationId": "DownloadedProducts_Delete",
+                "parameters": [
+                    {
+                        "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ProductNameParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Accepted",
+                        "schema": {
+                            "$ref": "#/definitions/DownloadedProductResource"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }                    
+                },
+                "x-ms-long-running-operation": true,
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
+            }            
         }
     },
     "definitions": {
