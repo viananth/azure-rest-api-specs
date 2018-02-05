@@ -10,7 +10,7 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.AzureBridge.Admin/activations": {
             "get": {
                 "x-ms-examples": {
                     "Return product name.": {
@@ -26,6 +26,9 @@
                     {
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
                     },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ResourceGroupParameter"
+                    },                   
                     {
                         "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
                     }
