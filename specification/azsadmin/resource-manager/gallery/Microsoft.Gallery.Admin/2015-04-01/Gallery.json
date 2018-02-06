@@ -13,7 +13,7 @@
         "/providers/Microsoft.Gallery.Admin/operations": {
             "get": {
                 "x-ms-examples": {
-                    "Gets the available operations": {
+                    "Gets the available gallery admin operations.": {
                         "$ref": "./examples/Operations.json"
                     }
                 },
@@ -64,17 +64,17 @@
                 },
                 "type": {
                     "readOnly": true,
-                    "description": "Type of resource.",
+                    "description": "Type of the resource.",
                     "type": "string"
                 },
                 "location": {
                     "readOnly": true,
-                    "description": "Location of resource.",
+                    "description": "Location of the resource.",
                     "type": "string"
                 },
                 "tags": {
                     "readOnly": true,
-                    "description": "List of key value pairs.",
+                    "description": "List of key-value pairs.",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
@@ -145,14 +145,14 @@
         "SubscriptionIdParameter": {
             "name": "subscriptionId",
             "in": "path",
-            "description": "Subscription credentials which uniquely identify Microsoft Azure subscription.  The subscription ID forms part of the URI for every service call.",
+            "description": "Subscription credentials that uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.",
             "required": true,
             "type": "string"
         },
         "ApiVersionParameter": {
             "name": "api-version",
             "in": "query",
-            "description": "Client Api Version.",
+            "description": "Client API Version.",
             "required": true,
             "type": "string",
             "default": "2016-05-01"
@@ -170,7 +170,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow.",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

@@ -57,7 +57,7 @@
                 "tags": [
                     "GalleryItems"
                 ],
-                "summary": "Upload a provider gallery item to the storage.",
+                "summary": "Uploads a provider gallery item to the storage.",
                 "operationId": "GalleryItems_Create",
                 "consumes": [
                     "application/json"
@@ -216,7 +216,7 @@
                     "type": "string"
                 },
                 "itemName": {
-                    "description": "The display name for the gallery item, in the requestor’s locale.",
+                    "description": "The display name for the gallery item, for the locale of the request.",
                     "type": "string"
                 },
                 "itemDisplayName": {
@@ -240,7 +240,7 @@
                     "type": "string"
                 },
                 "uiDefinitionUri": {
-                    "description": "The URL of the view definition JSON object that defines the UI information that is used when an instance of the gallery item resource definition is created.",
+                    "description": "The URL of the view definition object that defines the UI information that is used when an instance of the gallery item resource definition is created.",
                     "type": "string"
                 },
                 "createdTime": {
@@ -567,7 +567,7 @@
             }
         },
         "DefinitionTemplates": {
-            "description": "Holds UI definition file Uri and deployment template file Uris.",
+            "description": "Holds UI definition file Uri and deployment template file URIs.",
             "type": "object",
             "properties": {
                 "uiDefinitionFileUri": {
@@ -575,11 +575,11 @@
                     "type": "string"
                 },
                 "defaultDeploymentTemplateId": {
-                    "description": "Default deployment template id.",
+                    "description": "Default deployment template ID.",
                     "type": "string"
                 },
                 "deploymentTemplateFileUris": {
-                    "description": "Dictionary containing the deployment template file IDs defined in the package manifest.",
+                    "description": "List of key-value containing the deployment template file IDs defined in the package manifest.",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
@@ -587,7 +587,7 @@
                     "readOnly": true
                 },
                 "deploymentFragmentFileUris": {
-                    "description": "Dictionary containing the deployment fragment file IDs defined in the package manifest.",
+                    "description": "List of key-value pairs containing the deployment fragment file IDs defined in the package manifest.",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
@@ -663,7 +663,7 @@
         "GalleryItemNameParameter": {
             "name": "galleryItemName",
             "in": "path",
-            "description": "Identity of the gallery item. Includes publisher name, item name and may include version separated by period character.",
+            "description": "Identity of the gallery item. Includes publisher name, item name, and may include version separated by period character.",
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
@@ -684,7 +684,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }
