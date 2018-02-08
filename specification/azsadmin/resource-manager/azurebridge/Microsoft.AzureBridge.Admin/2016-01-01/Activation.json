@@ -17,7 +17,7 @@
                         "$ref": "./examples/Activation/List.json"
                     }
                 },
-                "description": "Return product name.",
+                "description": "Returns the list of activations.",
                 "tags": [
                     "Activations"
                 ],
@@ -59,7 +59,7 @@
                         "$ref": "./examples/Activation/Get.json"
                     }
                 },
-                "description": "Return product name.",
+                "description": "Returns activation name.",
                 "tags": [
                     "Activations"
                 ],
