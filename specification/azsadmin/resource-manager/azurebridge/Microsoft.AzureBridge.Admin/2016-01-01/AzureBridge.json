@@ -224,6 +224,14 @@
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
+        },
+        "LocationParameter": {
+            "name": "location",
+            "in": "path",
+            "description": "Resource location.",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
         }
     },
     "securityDefinitions": {

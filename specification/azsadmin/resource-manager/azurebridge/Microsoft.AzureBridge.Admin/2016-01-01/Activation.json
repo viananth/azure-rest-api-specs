@@ -122,6 +122,9 @@
                     },
                     {
                         "$ref": "Activation.json#/parameters/ActivationParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/LocationParameter"
                     }
                 ],
                 "responses": {
