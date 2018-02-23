@@ -142,9 +142,9 @@
             "type": "string",
             "default": "2016-05-01"
         },
-        "LocationParameter": {
+        "ResourceGroupParameter": {
             "description": "Location of the Azure Stack instance.",
-            "name": "location",
+            "name": "resourceGroup",
             "in": "path",
             "type": "string",
             "required": true,
