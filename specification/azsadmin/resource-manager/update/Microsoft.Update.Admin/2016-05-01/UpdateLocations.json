@@ -30,13 +30,13 @@
         "operationId": "UpdateLocations_List",
         "parameters": [
           {
-            "$ref": "Updates.json#/parameters/SubscriptionIdParameter"
+            "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Updates.json#/parameters/LocationParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
-            "$ref": "Updates.json#/parameters/ApiVersionParameter"
+            "$ref": "Update.json#/parameters/ApiVersionParameter"
           }
         ],
         "responses": {
@@ -66,16 +66,16 @@
         "operationId": "UpdateLocations_Get",
         "parameters": [
           {
-            "$ref": "Updates.json#/parameters/SubscriptionIdParameter"
+            "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Updates.json#/parameters/LocationParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "#/parameters/UpdateLocationParameter"
           },
           {
-            "$ref": "Updates.json#/parameters/ApiVersionParameter"
+            "$ref": "Update.json#/parameters/ApiVersionParameter"
           }
         ],
         "responses": {
@@ -102,7 +102,7 @@
       },
       "allOf": [
         {
-          "$ref": "Updates.json#/definitions/Resource"
+          "$ref": "Update.json#/definitions/Resource"
         }
       ]
     },

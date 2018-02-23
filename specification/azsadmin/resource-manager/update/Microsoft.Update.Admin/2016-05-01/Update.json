@@ -10,6 +10,7 @@
         "https"
     ],
     "paths": {
+<<<<<<< HEAD
         "/providers/Microsoft.Update.Admin/operations": {
             "get": {
                 "x-ms-examples": {
@@ -130,6 +131,42 @@
                     "type": "string"
                 }
             }
+=======
+    },
+    "definitions": {
+        "Resource": {
+            "description": "Base Resource Object",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "URI of the resource.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "description": "Name of the resource.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "type": {
+                    "description": "Type of resource.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "location": {
+                    "description": "Region Location of resource.",
+                    "type": "string"
+                },
+                "tags": {
+                    "description": "List of key value pairs.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            },
+            "x-ms-azure-resource": true
+>>>>>>> parent of 480604af... Remove operations specific json
         }
     },
     "parameters": {
