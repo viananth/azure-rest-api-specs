@@ -164,7 +164,7 @@
   },
   "parameters": {
     "UpdateLocationParameter": {
-      "name": "location",
+      "name": "updateLocation",
       "description": "The name of the update location.",
       "in": "path",
       "required": true,

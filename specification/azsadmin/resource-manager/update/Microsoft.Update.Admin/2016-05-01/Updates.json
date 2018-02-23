@@ -124,13 +124,14 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
+          "202": {
+            "description": "Accepted",
             "schema": {
               "$ref": "#/definitions/Update"
             }
           }
-        }
+        },
+        "x-ms-long-running-operation": true
       }
     }
   },
