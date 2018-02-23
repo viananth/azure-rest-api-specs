@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates": {
       "get": {
         "x-ms-examples": {
           "Get the list of updates at an update locations.": {
@@ -33,7 +33,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -55,7 +55,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}": {
       "get": {
         "x-ms-examples": {
           "Get a specific update at an update location.": {
@@ -72,7 +72,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -94,7 +94,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/Apply": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/Apply": {
       "post": {
         "x-ms-examples": {
           "Apply a specific update at an update location.": {
@@ -111,7 +111,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -124,14 +124,13 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted",
+          "200": {
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/Update"
             }
           }
-        },
-        "x-ms-long-running-operation": true
+        }
       }
     }
   },
