@@ -168,12 +168,12 @@
         },
         "timeStarted": {
           "description": "Update start time.",
-          "format": "string",
-          "type": "date-time"
+          "type": "string",
+          "format": "date-time"
         },
         "duration": {
           "description": "Duration of the update.",
-          "format": "string"
+          "type": "string"
         },
         "state": {
           "description": "State of the update run.",
