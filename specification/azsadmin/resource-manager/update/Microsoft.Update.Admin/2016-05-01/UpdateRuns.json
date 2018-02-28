@@ -163,22 +163,21 @@
       "type": "object",
       "properties": {
         "progress": {
-          "description": "Current progress of update.",
+          "description": "Current progress of the update run.",
           "$ref": "#/definitions/Step"
         },
         "timeStarted": {
           "description": "Update start time.",
-          "format": "int32",
-          "type": "integer"
+          "format": "string",
+          "type": "date-time"
         },
         "duration": {
           "description": "Duration of the update.",
-          "format": "int32",
-          "type": "integer"
+          "format": "string"
         },
         "state": {
           "description": "State of the update run.",
-          "type": "string"
+          "$ref": "#/definitions/UpdateRunState"
         }
       }
     },
@@ -187,7 +186,7 @@
       "type": "object",
       "properties": {
         "value": {
-          "description": "List of update runs on this page.",
+          "description": "List of update runs.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/UpdateRun"
@@ -200,7 +199,7 @@
       }
     },
     "Step": {
-      "description": "Pageable list of update runs.",
+      "description": "Inforamtion about each step of the update process.",
       "type": "object",
       "properties": {
         "name": {
@@ -212,7 +211,7 @@
           "type": "string"
         },
         "errorMessage": {
-          "description": "Error message if any.",
+          "description": "Error message, if any.",
           "type": "string"
         },
         "status": {
