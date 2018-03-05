@@ -1,11 +1,11 @@
 # Update Admin
-
+    
 > see https://aka.ms/autorest
 
 This is the AutoRest configuration file for Update Admin.
 
 ---
-## Getting Started
+## Getting Started 
 To build the SDK for Update Admin, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -17,7 +17,7 @@ To see additional help and options, run:
 
 ## Configuration
 
-### Basic Information
+### Basic Information 
 These are the global settings for the Update API.
 
 ``` yaml
@@ -33,7 +33,6 @@ These settings apply only when `--tag=package-2016-05-01` is specified on the co
 
 ``` yaml $(tag) == 'package-2016-05-01'
 input-file:
-    - "Microsoft.Update.Admin/2016-05-01/Update.json"
     - "Microsoft.Update.Admin/2016-05-01/Updates.json"
     - "Microsoft.Update.Admin/2016-05-01/UpdateLocations.json"
     - "Microsoft.Update.Admin/2016-05-01/UpdateRuns.json"
@@ -42,7 +41,7 @@ input-file:
 ---
 # Code Generation
 
-## C#
+## C# 
 
 These settings apply only when `--csharp` is specified on the command line.
 Please also specify `--csharp-sdks-folder=<path to "SDKs" directory of your azure-sdk-for-net clone>`.
