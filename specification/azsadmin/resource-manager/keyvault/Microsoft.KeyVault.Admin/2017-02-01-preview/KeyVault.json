@@ -9,12 +9,18 @@
     "schemes": [
         "https"
     ],
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
     "paths": {
         "/providers/Microsoft.KeyVault.Admin/operations": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of support rest operations.": {
-                        "$ref": "./examples/Operations/List.json" 
+                        "$ref": "./examples/Operations/List.json"
                     }
                 },
                 "description": "Get the list of support rest operations.",
@@ -42,7 +48,7 @@
         }
     },
     "definitions": {
-		"Operation": {
+        "Operation": {
             "description": "Describes the supported rest operation.",
             "properties": {
                 "name": {
@@ -86,7 +92,7 @@
                         "$ref": "#/definitions/Operation"
                     }
                 },
-                "nextLink" : {
+                "nextLink": {
                     "description": "URI to the next page of operations.",
                     "type": "string"
                 }
@@ -101,11 +107,11 @@
                     "description": "URI of the resource.",
                     "type": "string"
                 },
-              "name": {
-                "readOnly": true,
-                "description": "Name of the resource.",
-                "type": "string"
-              },
+                "name": {
+                    "readOnly": true,
+                    "description": "Name of the resource.",
+                    "type": "string"
+                },
                 "type": {
                     "readOnly": true,
                     "description": "Type of resource.",
