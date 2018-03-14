@@ -11,6 +11,19 @@
     },
     "responses": {
         "200": {
+            "body": {  
+                "id": "/subscriptions/b6a34e73-810f-4564-881a-8434c6c2e5c8/providers/Microsoft.AzureBridge.Admin/locations/local/operationResults/052b0e07-2f5d-47e9-a273-9ad311736c6b",  
+                "name": "052b0e07-2f5d-47e9-a273-9ad311736c6b",  
+                "status": "Succeeded",  
+                "startTime": "0001-01-01T08:00:00Z",  
+                "endTime": "0001-01-01T08:00:00Z",  
+                "percentComplete": 0.0,  
+                "properties": {    
+                    "productDisplayName": "Ubuntu Server 17.10"  
+                }
+            }
+        },
+        "202": {
             "body": {
                 "value": [],
                 "nextLink": ""
