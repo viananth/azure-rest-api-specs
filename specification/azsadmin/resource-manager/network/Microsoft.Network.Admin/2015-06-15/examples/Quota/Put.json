@@ -3,13 +3,13 @@
         "api-version": "2015-06-15",
         "subscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73",
         "location": "local",
-        "resourceName": "TestQuotaForUpdate"
+        "resourceName": "TestQuotaForUpdate",
+        "Quota": "test"
     },
     "responses": {
         "200": {
             "body": {
                 "name": "TestQuotaForUpdate",
-                "etag": "W/\"15b52511-9e47-47f8-a6d7-a32d6f6b9460\"",
                 "type": "Microsoft.Network.Admin/quotas",
                 "properties": {
                   "provisioningState": "Updating",
@@ -28,7 +28,6 @@
         "201": {
             "body": {
                 "name": "TestQuotaForRemoval",
-                "etag": "W/\"8ca8c633-7bfb-4ac7-864d-9f07e1204c21\"",
                 "type": "Microsoft.Network.Admin/quotas",
                 "properties": {
                     "provisioningState": "Succeeded",

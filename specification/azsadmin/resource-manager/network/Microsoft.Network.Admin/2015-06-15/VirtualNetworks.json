@@ -79,7 +79,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "Network.json#/definitions/ResourceTenant"
+                    "$ref": "Network.json#/definitions/Resource"
                 }
             ]
         },
@@ -91,7 +91,12 @@
                     "description": "The virtual network configuration state.",
                     "$ref": "#/definitions/VirtualNetworkConfigurationState"
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "$ref": "Network.json#/definitions/ResourceTenant"
+                }
+            ]
         },
         "VirtualNetworkConfigurationState": {
             "description": "The virtual network configuration state.",

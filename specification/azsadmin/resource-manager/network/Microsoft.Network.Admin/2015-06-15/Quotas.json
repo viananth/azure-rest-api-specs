@@ -238,7 +238,12 @@
                     "description": "State of migration such as None, Prepare, Commit, and Abort.",
                     "$ref": "#/definitions/MigrationPhase"
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "$ref": "Network.json#/definitions/ResourceTenant"
+                }
+            ]
         },
         "QuotaList": {
             "description": "A pageable list of network quotas.",

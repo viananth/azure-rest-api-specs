@@ -10,7 +10,6 @@
                 "value": [
                     {
                         "name": "Default Quota",
-                        "etag": "W/\"8fbd9932-75d1-4f23-83ab-fefe9c9818b5\"",
                         "type": "Microsoft.Network.Admin/quotas",
                         "location": "local",
                         "properties": {
@@ -28,6 +27,8 @@
                     }
                 ]
             }
+        },
+        "404": {
         }
     }
 }

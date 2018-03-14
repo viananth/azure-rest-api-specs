@@ -2,7 +2,8 @@
     "parameters": {
         "api-version": "2015-06-15",
         "subscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73",
-        "location": "local"
+        "location": "local",
+        "resourceName": "TestQuotaForUpdate"
     },
     "responses": {
         "200": {
