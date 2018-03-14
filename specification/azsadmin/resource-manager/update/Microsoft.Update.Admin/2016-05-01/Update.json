@@ -134,14 +134,6 @@
             "required": true,
             "type": "string"
         },
-        "ResourceGroupParameter": {
-            "description": "The resource group the resource is located under.",
-            "name": "resourceGroup",
-            "in": "path",
-            "type": "string",
-            "required": true,
-            "x-ms-parameter-location": "method"
-        },
         "ApiVersionParameter": {
             "name": "api-version",
             "in": "query",
@@ -164,7 +156,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
+            "description": "Azure Active Directory OAuth2 Flow",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

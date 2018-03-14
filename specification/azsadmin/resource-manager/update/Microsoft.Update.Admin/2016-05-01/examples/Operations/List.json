@@ -1,21 +1,19 @@
 {
     "parameters": {
-        "api-version": "2016-05-01"
+        "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
+        "location": "local",
+        "api-version": "2015-06-01-preview",
+        "reportedStartTime": "2017-08-01T00:00:00.00Z",
+        "reportedEndTime": "2017-08-02T00:00:00.00Z",
+        "aggregationGranularity": "",
+        "subscriberId": "",
+        "continuationToken": ""
     },
     "responses": {
         "200": {
             "body": {
-                "value": [
-                    {
-                        "name": "Microsoft.Update.Admin/updateLocations/read",
-                        "display": {
-                            "provider": "Microsoft Update Administration Service",
-                            "resource": "Update Locations",
-                            "operation": "Get Update Locations",
-                            "description": "Gets the update locations."
-                        }
-                    }
-                ]
+                "value": [],
+                "nextLink": ""
             }
         }
     }

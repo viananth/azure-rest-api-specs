@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates{update}/updateRuns": {
       "get": {
         "x-ms-examples": {
           "Get the list of update run.": {
@@ -33,7 +33,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -58,7 +58,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns/{runId}": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns/{runId}": {
       "get": {
         "x-ms-examples": {
           "Get an update run.": {
@@ -75,7 +75,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -100,7 +100,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns/{runId}/rerun": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/updateRuns/{runId}/rerun": {
       "post": {
         "x-ms-examples": {
           "Rerun an update.": {
@@ -117,7 +117,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -133,11 +133,10 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted"
+          "200": {
+            "description": "OK"
           }
-        },
-        "x-ms-long-running-operation": true
+        }
       }
     }
   },
@@ -163,22 +162,21 @@
       "type": "object",
       "properties": {
         "progress": {
-          "description": "Current progress of update.",
+          "description": "Current progress of the update run.",
           "$ref": "#/definitions/Step"
         },
         "timeStarted": {
           "description": "Update start time.",
-          "format": "int32",
-          "type": "integer"
+          "type": "string",
+          "format": "date-time"
         },
         "duration": {
           "description": "Duration of the update.",
-          "format": "int32",
-          "type": "integer"
+          "type": "string"
         },
         "state": {
           "description": "State of the update run.",
-          "type": "string"
+          "$ref": "#/definitions/UpdateRunState"
         }
       }
     },
@@ -187,7 +185,7 @@
       "type": "object",
       "properties": {
         "value": {
-          "description": "List of update runs on this page.",
+          "description": "List of update runs.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/UpdateRun"
@@ -200,7 +198,7 @@
       }
     },
     "Step": {
-      "description": "Pageable list of update runs.",
+      "description": "Inforamtion about each step of the update process.",
       "type": "object",
       "properties": {
         "name": {
@@ -212,7 +210,7 @@
           "type": "string"
         },
         "errorMessage": {
-          "description": "Error message if any.",
+          "description": "Error message, if any.",
           "type": "string"
         },
         "status": {
@@ -220,12 +218,12 @@
           "type": "string"
         },
         "startTimeUtc": {
-          "description": "Time at which this step started running.",
+          "description": "Time at which this step started executing",
           "type": "string",
           "format": "date-time"
         },
         "endTimeUtc": {
-          "description": "Time at which this step stopped executing.",
+          "description": "Time at which this step stopped executing",
           "type": "string",
           "format": "date-time"
         },
@@ -268,7 +266,7 @@
       "type": "oauth2",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "flow": "implicit",
-      "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
+      "description": "Azure Active Directory OAuth2 Flow",
       "scopes": {
         "user_impersonation": "impersonate your user account"
       }
