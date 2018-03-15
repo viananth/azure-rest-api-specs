@@ -59,7 +59,7 @@
             },
             "delete": {
                 "x-ms-examples": {
-                    "Delete an existing storage quota..": {
+                    "Delete an existing storage quota.": {
                         "$ref": "./Examples/Quotas/Delete.json"
                     }
                 },

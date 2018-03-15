@@ -56,13 +56,13 @@
                     "type": "string"
                 },
                 "display": {
-                    "description": "Contains the localized display information for this particular operation / action..",
+                    "description": "Contains the localized display information for this particular operation / action.",
                     "$ref": "#/definitions/Display"
                 }
             }
         },
         "Display": {
-            "description": "Contains the localized display information for this particular operation / action..",
+            "description": "Contains the localized display information for this particular operation / action.",
             "properties": {
                 "provider": {
                     "description": "The localized friendly form of the resource provider name � it is expected to also include the publisher/company responsible. It should use Title Casing and begin with \"Microsoft\" for 1st party services. e.g. \"Microsoft Monitoring Insights\" or \"Microsoft Compute.\"",

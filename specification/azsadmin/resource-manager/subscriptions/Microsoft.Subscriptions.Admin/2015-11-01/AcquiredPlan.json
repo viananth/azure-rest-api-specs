@@ -13,7 +13,7 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/subscriptions/{targetSubscriptionId}/acquiredPlans": {
             "get": {
                 "x-ms-examples": {
-                    "Get a collection of all acquired plans that subscription has access to..": {
+                    "Get a collection of all acquired plans that subscription has access to.": {
                         "$ref": "examples/AcquiredPlan/List.json"
                     }
                 },
@@ -127,7 +127,7 @@
                     },
                     "204": {
                         "description": "No Content"
-                    }                   
+                    }
                 },
                 "produces": [
                     "application/json"
@@ -282,7 +282,7 @@
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
-        },        
+        },
         "NewAcquiredPlanParameter": {
             "name": "newAcquiredPlan",
             "in": "body",

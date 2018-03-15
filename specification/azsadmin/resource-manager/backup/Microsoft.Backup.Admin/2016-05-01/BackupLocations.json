@@ -231,7 +231,7 @@
                     "type": "string"
                 },
                 "backupFrequencyInHours": {
-                    "description": "The interval, in hours, of backups.",
+                    "description": "The interval, in hours, for the frequency that the scheduler takes a backup.",
                     "type": "string"
                 },
                 "availableCapacity": {
@@ -251,7 +251,7 @@
                     "type": "string"
                 },
                 "backupRetentionPeriodInDays": {
-                    "description": "The retention period, in days, for backs in the storage location..",
+                    "description": "The retention period, in days, for backs in the storage location.",
                     "type": "integer"
                 }
             }
