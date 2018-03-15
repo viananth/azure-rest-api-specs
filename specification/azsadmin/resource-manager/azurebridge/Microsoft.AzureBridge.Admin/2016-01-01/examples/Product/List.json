@@ -21,7 +21,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "AcronisBackupLinux",
+                        "vmExtensionType": "AcronisBackupLinux",
                         "galleryItemIdentity": "Acronis.acronis-backup-lin-arm.0.0.36",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/Acronis.acronis-backup-linux-arm/icons/Large.png",
@@ -47,7 +47,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "AcronisBackup",
+                        "vmExtensionType": "AcronisBackup",
                         "galleryItemIdentity": "Acronis.acronis-backup-win-arm.0.0.36",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/Acronis.acronis-backup-win-arm/icons/Large.png",
@@ -250,7 +250,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "CustomScript",
+                        "vmExtensionType": "CustomScript",
                         "galleryItemIdentity": "microsoft.custom-script-linux-arm.2.0.50",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/Microsoft.Azure.Extensions.CustomScript/icons/Large.png",
@@ -276,7 +276,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "CustomScriptExtension",
+                        "vmExtensionType": "CustomScriptExtension",
                         "galleryItemIdentity": "Microsoft.CustomScriptExtension-arm.2.0.50",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/Microsoft.CustomScriptExtension-arm.2.0.50/icons/Large.png",
@@ -302,7 +302,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "DSC",
+                        "vmExtensionType": "DSC",
                         "galleryItemIdentity": "Microsoft.DSC-arm.2.0.8",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/Microsoft.DSC-arm.2.0.8/icons/Large.png",
@@ -559,7 +559,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "VMAccessForLinux",
+                        "vmExtensionType": "VMAccessForLinux",
                         "galleryItemIdentity": "Microsoft.VMAccessForLinux.1.4.7",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/Microsoft.OSTCExtensions.VMAccessForLinux.1.4.7.1/icons/Large.png",
@@ -610,7 +610,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "SqlIaaSAgent",
+                        "vmExtensionType": "SqlIaaSAgent",
                         "galleryItemIdentity": "Microsoft.SqlIaaSExtension.1.2.24",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/Microsoft.SQLIaaSExtension.1.2.24/icons/Large.png",
@@ -4493,7 +4493,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "IaaSAntimalware",
+                        "vmExtensionType": "IaaSAntimalware",
                         "galleryItemIdentity": "microsoft.antimalware-windows-arm.1.0.0",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/microsoft.antimalware-windows-arm.1.0.0/icons/Large.png",
@@ -4519,7 +4519,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "CustomScriptForLinux",
+                        "vmExtensionType": "CustomScriptForLinux",
                         "galleryItemIdentity": "microsoft.custom-script-linux-arm.2.0.50",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/microsoft.custom-script-linux-arm.2.0.50/icons/Large.png",
@@ -4545,7 +4545,7 @@
                         "offer": "",
                         "offerVersion": "",
                         "sku": "",
-                        "vmExtesnionType": "DockerExtension",
+                        "vmExtensionType": "DockerExtension",
                         "galleryItemIdentity": "microsoft.docker-arm.1.1.0",
                         "iconUris": {
                             "large": "https://azstmktprod001.azureedge.net/microsoft.docker-arm.1.1.0/icons/Large.png",

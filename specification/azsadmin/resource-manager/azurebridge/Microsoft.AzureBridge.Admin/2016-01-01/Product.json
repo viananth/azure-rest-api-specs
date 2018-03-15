@@ -59,7 +59,7 @@
             "get": {
                 "x-ms-examples": {
                     "Return product name.": {
-                        "$ref": "./examples/Product/List.json"
+                        "$ref": "./examples/Product/Get.json"
                     }
                 },
                 "description": "Return product name.",
