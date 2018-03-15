@@ -16,7 +16,43 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates": {
+    "/providers/Microsoft.Update.Admin/operations": {
+      "get": {
+          "x-ms-examples": {
+              "Returns a list of support REST operations.": {
+                  "$ref": "./examples/Operations/List.json"
+              }
+          },
+          "description": "Returns a list of support REST operations.",
+          "tags": [
+              "Update"
+          ],
+          "operationId": "Operations_List",
+          "parameters": [
+              {
+                  "$ref": "#/parameters/ApiVersionParameter"
+              }
+          ],
+          "responses": {
+              "200": {
+                  "description": "OK",
+                  "schema": {
+                      "$ref": "#/definitions/OperationList"
+                  }
+              }
+          },
+          "x-ms-pageable": {
+              "nextLinkName": "nextLink"
+          },
+          "produces": [
+              "application/json"
+          ],
+          "consumes": [
+              "application/json"
+          ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates": {
       "get": {
         "x-ms-examples": {
           "Get the list of updates at an update locations.": {
@@ -33,7 +69,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -55,7 +91,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}": {
       "get": {
         "x-ms-examples": {
           "Get a specific update at an update location.": {
@@ -72,7 +108,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -94,7 +130,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/Apply": {
+    "/subscriptions/{subscriptionId}/resourcegroups/System.{location}/providers/Microsoft.Update.Admin/updateLocations/{updateLocation}/updates/{update}/Apply": {
       "post": {
         "x-ms-examples": {
           "Apply a specific update at an update location.": {
@@ -111,7 +147,7 @@
             "$ref": "Update.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "Update.json#/parameters/ResourceGroupParameter"
+            "$ref": "Update.json#/parameters/LocationParameter"
           },
           {
             "$ref": "UpdateLocations.json#/parameters/UpdateLocationParameter"
@@ -124,14 +160,13 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted",
+          "200": {
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/Update"
             }
           }
-        },
-        "x-ms-long-running-operation": true
+        }
       }
     }
   },
@@ -257,6 +292,56 @@
         "name": "UpdateState",
         "modelAsString": true
       }
+    },
+    "Operation": {
+      "description": "Describes the supported REST operation.",
+      "properties": {
+          "name": {
+              "description": "The name of the operation performed on the object. The name should match the action name that appears in RBAC or the event service.",
+              "type": "string"
+          },
+          "display": {
+              "description": "Contains the localized display information for this particular operation or action.",
+              "$ref": "#/definitions/Display"
+          }
+      }
+    },
+    "OperationList": {
+      "description": "List of Operations",
+      "properties": {
+          "value": {
+              "description": "Array of operations",
+              "type": "array",
+              "items": {
+                  "$ref": "#/definitions/Operation"
+              }
+          },
+          "nextLink": {
+              "description": "URI to the next page of operations.",
+              "type": "string"
+          }
+      }
+    },
+    "Display": {
+      "description": "Contains the localized display information for this particular operation / action..",
+      "properties": {
+          "provider": {
+              "description": "The localized, friendly version of the resource provider name. The provider name is expected to include the name of the publisher or company responsible. The provider name format should use title case and begin with \"Microsoft\" for first-party services. For example, the provider name may be\"Microsoft Monitoring Insights\" or \"Microsoft Compute\".",
+              "type": "string"
+          },
+          "resource": {
+              "description": "The localized, friendly version of the resource type related to this action or operation; the resource type should match the public documentation for the resource provider.",
+              "type": "string"
+          },
+          "operation": {
+              "description": "The localized, friendly name for the operation. Use the name as it will be displayed to the user.",
+              "type": "string"
+          },
+          "description": {
+              "description": "The localized, friendly description for the operation. The description will be displayed to the user. It should be thorough and concise for used in both tooltips and detailed views.",
+              "type": "string"
+          }
+      }
     }
   },
   "parameters": {
@@ -282,7 +367,7 @@
       "type": "oauth2",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "flow": "implicit",
-      "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
+      "description": "Azure Active Directory OAuth2 Flow",
       "scopes": {
         "user_impersonation": "impersonate your user account"
       }
