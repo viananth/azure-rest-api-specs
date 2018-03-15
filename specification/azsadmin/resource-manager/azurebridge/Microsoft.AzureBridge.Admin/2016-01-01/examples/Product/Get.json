@@ -3,11 +3,9 @@
         "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
         "location": "local",
         "api-version": "2015-06-01-preview",
-        "reportedStartTime": "2017-08-01T00:00:00.00Z",
-        "reportedEndTime": "2017-08-02T00:00:00.00Z",
-        "aggregationGranularity": "",
-        "subscriberId": "",
-        "continuationToken": ""
+        "resourceGroup": "azurestack",
+        "activationName": "default",
+        "productName": "Canonical.UbuntuServer1710-ARM.1.0.6"
     },
     "responses": {
         "200": {  
@@ -57,6 +55,9 @@
                     "version": "17.10.201801090"    
                 }  
             }
+        },
+        "404": {
+            
         }
     }
 }

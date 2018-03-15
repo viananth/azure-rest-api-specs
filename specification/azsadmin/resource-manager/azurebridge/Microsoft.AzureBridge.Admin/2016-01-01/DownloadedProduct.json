@@ -187,6 +187,10 @@
                 "privacyPolicy": {
                     "description": "Privacy policy of the product.",
                     "type": "string"
+                },
+                "provisioningState": {
+                    "description": "Provisioning state of the resource.",
+                    "$ref": "AzureBridge.json#/definitions/ProvisioningState"
                 }
             },
             "allOf": [
