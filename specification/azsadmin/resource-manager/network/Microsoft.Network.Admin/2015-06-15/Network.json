@@ -98,12 +98,7 @@
                     "description": "The tenant resource URI.",
                     "type": "string"
                 }
-            },
-            "allOf": [
-                {
-                    "$ref": "#/definitions/Resource"
-                }
-            ]
+            }
         },
         "AdminOverview": {
             "description": "Admin overview resource object.",

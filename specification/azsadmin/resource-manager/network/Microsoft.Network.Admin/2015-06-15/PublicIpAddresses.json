@@ -79,7 +79,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "Network.json#/definitions/ResourceTenant"
+                    "$ref": "Network.json#/definitions/Resource"
                 }
             ]
         },
@@ -107,7 +107,12 @@
                         "name": "AllocationMethodType"
                     }
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "$ref": "Network.json#/definitions/ResourceTenant"
+                }
+            ]    
         },
         "PublicIpAddressList": {
             "description": "Pageable list of public ip addresses.",

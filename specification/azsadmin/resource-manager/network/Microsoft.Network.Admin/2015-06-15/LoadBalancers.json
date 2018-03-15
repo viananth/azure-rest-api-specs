@@ -79,7 +79,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "Network.json#/definitions/ResourceTenant"
+                    "$ref": "Network.json#/definitions/Resource"
                 }
             ]
         },
@@ -94,7 +94,12 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "$ref": "Network.json#/definitions/ResourceTenant"
+                }
+            ]
         },
         "LoadBalancerList": {
             "description": "Pageable list of load balancers.",

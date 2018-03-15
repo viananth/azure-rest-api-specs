@@ -4,6 +4,7 @@
         "location": "local",
         "api-version": "2015-06-01-preview",
         "resourceGroup": "azurestack",
+        "activation": "default",
         "activationName": "default"
     },
     "responses": {
@@ -22,8 +23,6 @@
                     "provisioningState": "Succeeded"  
                 }
             }
-        },
-        "404": {
         }
     }
 }

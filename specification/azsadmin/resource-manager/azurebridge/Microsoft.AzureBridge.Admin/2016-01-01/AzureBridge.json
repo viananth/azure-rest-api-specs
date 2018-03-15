@@ -52,7 +52,9 @@
                 "Stopped",
                 "Starting",
                 "Running",
-                "Stopping"
+                "Stopping",
+                "Succeeded",
+                "Downloading"
             ],
             "type": "string",
             "x-ms-enum": {
