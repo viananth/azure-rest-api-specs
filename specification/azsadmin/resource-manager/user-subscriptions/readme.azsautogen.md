@@ -1,0 +1,9 @@
+# AutoRest v3 generators
+
+> see https://aka.ms/autorest
+
+``` yaml
+input-file:
+  - $(this-folder)/Microsoft.Subscriptions/preview/2015-11-01/Subscriptions.json
+  - $(this-folder)/Microsoft.Subscriptions/preview/2015-11-01/Offer.json
+```
