@@ -64,6 +64,11 @@ directive:
     where:
       - $.paths["/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/moveSubscriptions"].post.operationId
       - $.paths["/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/validateMoveSubscriptions"].post.operationId
+
+  - where:
+      subject: Subscription
+      parameter-name: id
+    clear-alias: true
 ```
 
 ### Tag: package-2015-11-01
