@@ -98,9 +98,9 @@
         },
         "description": "Creates a new product package.",
         "tags": [
-          "Products"
+          "ProductPackages"
         ],
-        "operationId": "Products_Download",
+        "operationId": "ProductPackages_Create",
         "parameters": [
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
