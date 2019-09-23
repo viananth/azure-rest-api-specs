@@ -16,18 +16,18 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/actionPlans": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/actionPlans/{planId}/operations": {
       "get": {
         "x-ms-examples": {
-          "Gets the list of action plans": {
-            "$ref": "./examples/ActionPlans/List.json"
+          "Lists the action plan operations": {
+            "$ref": "./examples/ActionPlanOperations/Get.json"
           }
         },
-        "description": "Gets the list of action plans",
+        "description": "Lists the action plan operations",
         "tags": [
-          "ActionPlans"
+          "ActionPlanOperations"
         ],
-        "operationId": "ActionPlan_List",
+        "operationId": "ActionPlanOperation_List",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
@@ -42,7 +42,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ActionPlanList"
+              "$ref": "#/definitions/ActionPlanOperationsList"
             }
           }
         },
@@ -52,17 +52,17 @@
       }
     },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/actionPlans/{planId}": {
-      "get": {
+      "post": {
         "x-ms-examples": {
-          "Gets the specified action plan": {
-            "$ref": "./examples/ActionPlans/Get.json"
+          "Gets the specified action plan operation": {
+            "$ref": "./examples/ActionPlanOperations/Get.json"
           }
         },
-        "description": "Gets the specified action plan",
+        "description": "Gets the specified action plan operation",
         "tags": [
-          "ActionPlans"
+          "ActionPlanOperations"
         ],
-        "operationId": "ActionPlan_Get",
+        "operationId": "ActionPlanOperation_Get",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
@@ -80,7 +80,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ActionPlanResourceEntity"
+              "$ref": "#/definitions/ActionPlanOperationResourceEntity"
             }
           }
         }
@@ -88,14 +88,14 @@
     }
   },
   "definitions": {
-    "ActionPlanList": {
-      "description": "List of action plans",
+    "ActionPlanOperationsList": {
+      "description": "List of action plan operations",
       "properties": {
         "value": {
-          "description": "Array of action plans.",
+          "description": "Array of action plan operations.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ActionPlanResourceEntity"
+            "$ref": "#/definitions/ActionPlanOperationResourceEntity"
           }
         },
         "nextLink": {
@@ -104,21 +104,25 @@
         }
       }
     },
-    "ActionPlanResourceEntity": {
-      "description": "Action Plan Resource Entity",
+    "ActionPlanOperationResourceEntity": {
+      "description": "Action Plan Operation Resource Entity",
       "type": "object",
       "properties": {
         "actionPlanInstanceId": {
           "description": "Action plan instance identifier",
           "$ref": "#/definitions/GenericIdentifier"
         },
+        "actionPlanOperationId": {
+          "description": "Action plan operation identifier",
+          "$ref": "#/definitions/GenericIdentifier"
+        },
         "blobContainerName": {
           "description": "Blob container name storing the deployment data",
           "type": "string"
         },
-        "actionPlanAdminProperties": {
+        "actionPlanOperationAdminProperties": {
           "description": "Action Plan Properties",
-          "$ref": "#/definitions/ActionPlanAdminProperties"
+          "$ref": "#/definitions/ActionPlanOperationAdminProperties"
         },
         "eTag": {
           "description": "Entity tag of the resource",
@@ -136,17 +140,21 @@
         }
       }
     },
-    "ActionPlanAdminProperties": {
-      "description": "Action Plan Properties",
+    "ActionPlanOperationAdminProperties": {
+      "description": "Action Plan Operation Properties",
       "type": "object",
       "properties": {
-        "actionPlanUri": {
-          "description": "Action plan uri",
+        "title": {
+          "description": "The operation title",
           "type": "string"
         },
-        "resourceGroupName": {
-          "description": "The target resource group name",
+        "description": {
+          "description": "The operation description",
           "type": "string"
+        },
+        "type": {
+          "description": "The action plan operation type",
+          "$ref": "#/definitions/ActionType"
         },
         "subscriptionId": {
           "description": "The target subscription identifier",
@@ -165,6 +173,10 @@
           "description": "The deployment end time",
           "type": "string",
           "format": "date-time"
+        },
+        "outputs": {
+          "description": "The action plan operation outputs in JToken format",
+          "type": "string"
         },
         "error": {
           "description": "Error Information",
@@ -191,6 +203,16 @@
         "details": {
           "description": "Error message details",
           "$ref": "#/definitions/ExtendedErrorInfo"
+        }
+      }
+    },
+    "ActionType": {
+      "description": "Action plan operation type",
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "The action type value",
+          "type": "string"
         }
       }
     },
