@@ -161,7 +161,12 @@
           "description": "Provisioning state of the resource.",
           "$ref": "#/definitions/ProvisioningState"
         }
-      }
+      },
+      "allOf": [
+        {
+          "$ref": "Update.json#/definitions/Resource"
+        }
+      ]
     },
     "ProductPackagesList": {
       "type": "object",
