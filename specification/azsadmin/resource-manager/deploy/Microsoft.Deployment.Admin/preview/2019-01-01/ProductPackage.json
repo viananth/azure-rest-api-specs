@@ -9,7 +9,13 @@
   "schemes": [
     "https"
   ],
-  "paths": {
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+"paths": {
     "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productPackages": {
       "get": {
         "x-ms-examples": {
@@ -24,10 +30,10 @@
         "operationId": "ProductPackages_List",
         "parameters": [
           {
-            "$ref": "#/parameters/SubscriptionIdParameter"
+            "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "#/parameters/ApiVersionParameter"
+            "$ref": "Deployment.json#/parameters/ApiVersionParameter"
           }
         ],
         "responses": {
@@ -38,18 +44,12 @@
             }
           }
         },
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ],
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productPackages/{product-id}": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productPackages/{productId}": {
       "get": {
         "x-ms-examples": {
           "Return the product package details.": {
@@ -63,13 +63,13 @@
         "operationId": "ProductPackages_Get",
         "parameters": [
           {
-            "$ref": "#/parameters/SubscriptionIdParameter"
+            "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "#/parameters/ProductIdParameter"
+            "$ref": "Deployment.json#/parameters/ProductIdParameter"
           },
           {
-            "$ref": "#/parameters/ApiVersionParameter"
+            "$ref": "Deployment.json#/parameters/ApiVersionParameter"
           }
         ],
         "responses": {
@@ -82,14 +82,8 @@
           "404": {
             "description": "Not Found"
           }
-        },
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ]
-      },
+      }
+    },
       "put": {
         "x-ms-examples": {
           "Creates a new product package.": {
@@ -103,22 +97,19 @@
         "operationId": "ProductPackages_Create",
         "parameters": [
           {
-            "$ref": "#/parameters/SubscriptionIdParameter"
+            "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "#/parameters/ProductIdParameter"
+            "$ref": "Deployment.json#/parameters/ProductIdParameter"
           },
           {
-            "$ref": "#/parameters/ApiVersionParameter"
+            "$ref": "Deployment.json#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "#/parameters/FileContainerIdParameter"
+            "$ref": "Deployment.json#/parameters/FileContainerIdParameter"
           }
         ],
         "responses": {
-          "200": {
-            "description": "Accepted"
-          },
           "202": {
             "description": "Accepted"
           },
@@ -126,13 +117,7 @@
             "description": "Not Found"
           }
         },
-        "x-ms-long-running-operation": true,
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ]
+        "x-ms-long-running-operation": true
       }
     }
   },
@@ -164,7 +149,7 @@
       },
       "allOf": [
         {
-          "$ref": "Update.json#/definitions/Resource"
+          "$ref": "Deployment.json#/definitions/Resource"
         }
       ]
     },
@@ -182,99 +167,6 @@
         "nextLink": {
           "description": "URI to the next page.",
           "type": "string"
-        }
-      }
-    },
-    "Resource": {
-      "description": "Base Resource Object",
-      "type": "object",
-      "properties": {
-        "id": {
-          "readOnly": true,
-          "description": "URI of the resource.",
-          "type": "string"
-        },
-        "name": {
-          "readOnly": true,
-          "description": "Name of the resource.",
-          "type": "string"
-        },
-        "type": {
-          "readOnly": true,
-          "description": "Type of resource.",
-          "type": "string"
-        },
-        "location": {
-          "readOnly": true,
-          "description": "Location of the resource",
-          "type": "string"
-        },
-        "tags": {
-          "readOnly": true,
-          "description": "List of key value pairs.",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        }
-      },
-      "x-ms-azure-resource": true
-    },
-    "Operation": {
-      "description": "Describes the supported REST operation.",
-      "properties": {
-        "name": {
-          "description": "The name of the operation being performed on this particular object. This name should match the name that appears in RBAC or the event service.",
-          "type": "string",
-          "readOnly": true
-        },
-        "display": {
-          "description": "Contains the localized display information for this particular operation / action.",
-          "$ref": "#/definitions/Display",
-          "readOnly": true
-        }
-      }
-    },
-    "Display": {
-      "description": "Contains the localized display information for this particular operation / action.",
-      "properties": {
-        "provider": {
-          "description": "The localized friendly form of the resource provider name – it is expected to also include the publisher/company responsible. It should use Title Casing and begin with \"Microsoft\" for 1st party services. e.g. \"Microsoft Monitoring Insights\" or \"Microsoft Compute.\"",
-          "type": "string",
-          "readOnly": true
-        },
-        "resource": {
-          "description": "The localized, friendly version of the resource type related to this action or operation; the resource type should match the public documentation for the resource provider.",
-          "type": "string",
-          "readOnly": true
-        },
-        "operation": {
-          "description": "The localized, friendly name for the operation. Use the name as it will displayed to the user.",
-          "type": "string",
-          "readOnly": true
-        },
-        "description": {
-          "description": "The localized, friendly description for the operation. The description will be displayed to the user. It should be thorough and concise for used in both tooltips and detailed views.",
-          "type": "string",
-          "readOnly": true
-        }
-      }
-    },
-    "OperationList": {
-      "description": "List of Operations",
-      "properties": {
-        "value": {
-          "description": "Array of operations",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Operation"
-          },
-          "readOnly": true
-        },
-        "nextLink": {
-          "description": "URI to the next page of operations.",
-          "type": "string",
-          "readOnly": true
         }
       }
     },
@@ -331,23 +223,8 @@
     }
   },
   "parameters": {
-    "SubscriptionIdParameter": {
-      "name": "subscriptionId",
-      "in": "path",
-      "description": "Subscription credentials which uniquely identify Microsoft Azure subscription.The subscription ID forms part of the URI for every service call.",
-      "required": true,
-      "type": "string"
-    },
-    "ApiVersionParameter": {
-      "name": "api-version",
-      "in": "query",
-      "description": "Client Api Version.",
-      "required": true,
-      "type": "string",
-      "default": "2019-01-01"
-    },
     "ProductIdParameter": {
-      "name": "product-id",
+      "name": "productId",
       "in": "query",
       "description": "The product identifier.",
       "required": true,

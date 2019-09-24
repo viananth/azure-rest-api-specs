@@ -82,13 +82,7 @@
                     "404": {
                         "description": "Not Found"
                     }
-                },
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ]
+                }
             },
             "put": {
                 "x-ms-examples": {
@@ -126,13 +120,7 @@
                         "description": "Not Found"
                     }
                 },
-                "x-ms-long-running-operation": true,
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ]
+                "x-ms-long-running-operation": true
             },
             "delete": {
                 "x-ms-examples": {
@@ -146,12 +134,6 @@
                 "summary": "Deletes specified file container.",
                 "description": "Delete an existing file container.",
                 "operationId": "FileContainers_Delete",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
                 "parameters": [
                     {
                         "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
