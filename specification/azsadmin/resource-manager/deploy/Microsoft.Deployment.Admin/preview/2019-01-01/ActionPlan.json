@@ -202,41 +202,6 @@
         }
       }
     },
-    "Resource": {
-      "description": "Base Resource Object",
-      "type": "object",
-      "properties": {
-        "id": {
-          "readOnly": true,
-          "description": "URI of the resource.",
-          "type": "string"
-        },
-        "name": {
-          "readOnly": true,
-          "description": "Name of the resource.",
-          "type": "string"
-        },
-        "type": {
-          "readOnly": true,
-          "description": "Type of resource.",
-          "type": "string"
-        },
-        "location": {
-          "readOnly": true,
-          "description": "Location of the resource",
-          "type": "string"
-        },
-        "tags": {
-          "readOnly": true,
-          "description": "List of key value pairs.",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        }
-      },
-      "x-ms-azure-resource": true
-    },
     "Operation": {
       "description": "Describes the supported REST operation.",
       "properties": {
