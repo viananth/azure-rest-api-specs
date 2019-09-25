@@ -282,14 +282,6 @@
     }
   },
   "parameters": {
-    "ProductIdParameter": {
-      "name": "productId",
-      "in": "path",
-      "description": "The product identifier.",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
-    },
     "ResourceGroupParameter": {
       "description": "The resource group the resource is located under.",
       "name": "resourceGroup",
