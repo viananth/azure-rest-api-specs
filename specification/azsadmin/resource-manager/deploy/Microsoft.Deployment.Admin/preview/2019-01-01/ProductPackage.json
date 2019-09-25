@@ -15,7 +15,7 @@
   "consumes": [
     "application/json"
   ],
-"paths": {
+  "paths": {
     "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productPackages": {
       "get": {
         "x-ms-examples": {
@@ -82,8 +82,8 @@
           "404": {
             "description": "Not Found"
           }
-      }
-    },
+        }
+      },
       "put": {
         "x-ms-examples": {
           "Creates a new product package.": {
@@ -222,20 +222,10 @@
   "parameters": {
     "ProductIdParameter": {
       "name": "productId",
-      "in": "query",
+      "in": "path",
       "description": "The product identifier.",
       "required": true,
       "type": "string"
-    },
-    "FileContainerIdParameter": {
-      "description": "The file container identifier.",
-      "name": "fileContainerId",
-      "in": "body",
-      "required": true,
-      "schema": {
-        "$ref": "#/definitions/FileContainerId"
-      },
-      "x-ms-parameter-location": "method"
     }
   },
   "securityDefinitions": {

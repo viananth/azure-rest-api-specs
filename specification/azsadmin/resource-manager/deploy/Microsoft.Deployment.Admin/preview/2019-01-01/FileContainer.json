@@ -268,7 +268,7 @@
         "FileContainerIdParameter": {
             "description": "The file container identifier.",
             "name": "fileContainerId",
-            "in": "query",
+            "in": "path",
             "required": true,
             "type": "string"
         },
