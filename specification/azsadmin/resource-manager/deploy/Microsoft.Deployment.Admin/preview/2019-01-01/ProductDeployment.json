@@ -132,7 +132,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductDeployment_Deploy",
+        "operationId": "ProductDeployment_RotateSecrets",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
