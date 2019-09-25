@@ -45,6 +45,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Ok"
+          },
           "202": {
             "description": "ACCEPTED"
           }
@@ -81,6 +84,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Ok"
+          },
           "202": {
             "description": "ACCEPTED"
           }
@@ -114,6 +120,10 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Ok"
+          },
+
           "202": {
             "description": "ACCEPTED"
           }
