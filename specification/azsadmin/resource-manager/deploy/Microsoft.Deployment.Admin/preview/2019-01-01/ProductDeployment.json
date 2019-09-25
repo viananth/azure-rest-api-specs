@@ -38,7 +38,7 @@
             "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
           },
           {
-            "$ref": "ProductDeployment.json#/parameters/BootstrapActionParameter"
+            "$ref": "ProductPackage.json#/parameters/BootstrapActionParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -74,7 +74,7 @@
             "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
-            "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
+            "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
           },
           {
             "$ref": "ProductDeployment.json#/parameters/DeployActionParameter"
@@ -150,7 +150,7 @@
             "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
-            "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
+            "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -183,7 +183,7 @@
             "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
-            "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
+            "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
           },
           {
             "$ref": "ProductDeployment.json#/parameters/UnlockActionParameter"
@@ -218,7 +218,7 @@
             "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
-            "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
+            "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -282,7 +282,7 @@
     "ProductIdParameter": {
       "name": "productId",
       "in": "path",
-      "description": "Id of the product.",
+      "description": "The product identifier.",
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method"
