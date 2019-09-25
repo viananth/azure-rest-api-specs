@@ -66,7 +66,7 @@
                         "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "ProductPackage.json#/parameters/FileContainerIdParameter"
+                        "$ref": "#/parameters/FileContainerIdParameter"
                     },
                     {
                         "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -139,7 +139,7 @@
                         "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "ProductPackage.json#/parameters/FileContainerIdParameter"
+                        "$ref": "#/parameters/FileContainerIdParameter"
                     },
                     {
                         "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -242,6 +242,26 @@
         "SourceUri": {
             "description": "Specifies The remote file location.",
             "type": "string"
+        },
+        "FileContainerId": {
+            "description": "File container resource identifier containing product manifest.",
+            "type": "string"
+        },
+        "ProvisioningState": {
+            "description": "The provisioning state of the resource.",
+            "type": "string",
+            "enum": [
+                "Stopped",
+                "Starting",
+                "Running",
+                "Stopping",
+                "Succeeded",
+                "Downloading"
+            ],
+            "x-ms-enum": {
+                "modelAsString": true,
+                "name": "ProvisioningState"
+            }
         }
     },
     "parameters": {
