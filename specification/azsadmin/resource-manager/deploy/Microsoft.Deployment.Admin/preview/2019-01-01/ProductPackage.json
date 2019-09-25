@@ -28,8 +28,7 @@
           "ProductPackages"
         ],
         "operationId": "ProductPackages_List",
-        "parameters": [
-          {
+        "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
@@ -61,8 +60,7 @@
           "ProductPackages"
         ],
         "operationId": "ProductPackages_Get",
-        "parameters": [
-          {
+        "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
@@ -95,8 +93,7 @@
           "ProductPackages"
         ],
         "operationId": "ProductPackages_Create",
-        "parameters": [
-          {
+        "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
@@ -107,6 +104,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "202": {
             "description": "Accepted"
           },
@@ -144,11 +144,9 @@
           "$ref": "#/definitions/ProvisioningState"
         }
       },
-      "allOf": [
-        {
-          "$ref": "Deployment.json#/definitions/Resource"
-        }
-      ]
+      "allOf": [{
+        "$ref": "Deployment.json#/definitions/Resource"
+      }]
     },
     "ProductPackagesList": {
       "type": "object",
@@ -239,11 +237,9 @@
       }
     }
   },
-  "security": [
-    {
-      "azure_auth": [
-        "user_impersonation"
-      ]
-    }
-  ]
+  "security": [{
+    "azure_auth": [
+      "user_impersonation"
+    ]
+  }]
 }
