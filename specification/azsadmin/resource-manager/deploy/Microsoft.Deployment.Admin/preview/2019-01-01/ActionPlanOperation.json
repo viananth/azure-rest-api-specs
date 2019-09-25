@@ -28,11 +28,15 @@
           "ActionPlanOperations"
         ],
         "operationId": "ActionPlanOperation_List",
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/LocationParameter"
+          },
+          {
+            "$ref": "#/parameters/PlanIdParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -63,7 +67,8 @@
           "ActionPlanOperations"
         ],
         "operationId": "ActionPlanOperation_Get",
-        "parameters": [{
+        "parameters": [
+          {
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
@@ -341,36 +346,6 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method"
-    },
-    "BootstrapActionParameter": {
-      "description": "Represents bootstrap action parameter",
-      "name": "bootstrapActionParameter",
-      "in": "body",
-      "required": true,
-      "schema": {
-        "$ref": "#/definitions/BootStrapActionParameters"
-      },
-      "x-ms-parameter-location": "method"
-    },
-    "UnlockActionParameter": {
-      "description": "Represents bootstrap action parameter",
-      "name": "unlockActionParameter",
-      "in": "body",
-      "required": true,
-      "schema": {
-        "$ref": "#/definitions/UnlockActionParameters"
-      },
-      "x-ms-parameter-location": "method"
-    },
-    "DeployActionParameter": {
-      "description": "Represents bootstrap action parameter",
-      "name": "deployActionParameter",
-      "in": "body",
-      "required": true,
-      "schema": {
-        "$ref": "#/definitions/GenericVersion"
-      },
-      "x-ms-parameter-location": "method"
     }
   },
   "securityDefinitions": {
@@ -384,10 +359,11 @@
       }
     }
   },
-  "security": [{
-    "azure_auth": [
-      "user_impersonation"
-    ]
-  }]
-
+  "security": [
+    {
+      "azure_auth": [
+        "user_impersonation"
+      ]
+    }
+  ]
 }
