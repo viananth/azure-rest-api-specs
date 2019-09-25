@@ -183,7 +183,7 @@
                 },
                 "provisioningState": {
                     "description": "Provisioning state of the resource.",
-                    "$ref": "#/definitions/ProvisioningState"
+                    "$ref": "ActionPlan.json#/definitions/ProvisioningState"
                 }
             },
             "allOf": [
@@ -249,22 +249,6 @@
         "FileContainerId": {
             "description": "File container resource identifier containing product manifest.",
             "type": "string"
-        },
-        "ProvisioningState": {
-            "description": "The provisioning state of the resource.",
-            "type": "string",
-            "enum": [
-                "Stopped",
-                "Starting",
-                "Running",
-                "Stopping",
-                "Succeeded",
-                "Downloading"
-            ],
-            "x-ms-enum": {
-                "modelAsString": true,
-                "name": "ProvisioningState"
-            }
         },
         "FileContainerParameters": {
             "description": "Parameters for creating a new file container.",

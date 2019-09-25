@@ -192,7 +192,7 @@
         },
         "provisioningState": {
           "description": "The provisioning state",
-          "$ref": "#/definitions/ProvisioningState"
+          "$ref": "ActionPlan.json#/definitions/ProvisioningState"
         }
       }
     },
@@ -221,20 +221,6 @@
         "value": {
           "description": "The action type value",
           "type": "string"
-        }
-      }
-    },
-    "ProvisioningState": {
-      "description": "Provisioning state value",
-      "type": "object",
-      "properties": {
-        "state": {
-          "description": "The provisioning state",
-          "type": "string"
-        },
-        "isTerminal": {
-          "description": "a value indicating whether this instance is terminal",
-          "type": "boolean"
         }
       }
     }
