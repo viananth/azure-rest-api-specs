@@ -111,7 +111,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Accepted"
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/FileContainer"
+                        }
                     },
                     "202": {
                         "description": "Accepted"
@@ -284,7 +287,8 @@
             "name": "fileContainerId",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "x-ms-parameter-location": "method"
         },
         "FileContainerParameters": {
             "description": "The parameters required to create a new file container.",

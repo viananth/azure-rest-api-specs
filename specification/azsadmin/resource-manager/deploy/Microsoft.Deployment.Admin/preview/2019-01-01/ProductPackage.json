@@ -105,7 +105,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ProductPackage"
+            }
           },
           "202": {
             "description": "Accepted"
@@ -223,7 +226,8 @@
       "in": "path",
       "description": "The product identifier.",
       "required": true,
-      "type": "string"
+      "type": "string",
+      "x-ms-parameter-location": "method"
     }
   },
   "securityDefinitions": {
