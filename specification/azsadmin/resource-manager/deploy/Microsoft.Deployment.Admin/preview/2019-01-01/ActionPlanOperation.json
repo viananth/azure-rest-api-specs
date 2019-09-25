@@ -225,7 +225,7 @@
       }
     },
     "ProvisioningState": {
-      "description": "Provisioning State value, One of Accepted, Creating, Deleting, Moving, Failed, Succeeded",
+      "description": "Provisioning state value",
       "type": "object",
       "properties": {
         "state": {
