@@ -56,7 +56,7 @@
       }
     },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/actionPlans/{planId}/operations/{operationId}": {
-      "post": {
+      "get": {
         "x-ms-examples": {
           "Gets the specified action plan operation": {
             "$ref": "./examples/ActionPlanOperations/Get.json"
@@ -237,21 +237,6 @@
           "type": "boolean"
         }
       }
-    },
-    "Operation": {
-      "description": "Describes the supported REST operation.",
-      "properties": {
-        "name": {
-          "description": "The name of the operation being performed on this particular object. This name should match the name that appears in RBAC or the event service.",
-          "type": "string",
-          "readOnly": true
-        },
-        "display": {
-          "description": "Contains the localized display information for this particular operation / action.",
-          "$ref": "#/definitions/Display",
-          "readOnly": true
-        }
-      }
     }
   },
   "parameters": {
@@ -273,8 +258,8 @@
       "x-ms-parameter-location": "method"
     },
     "OperationIdParameter": {
-        "description": "Identifier of the action plan.",
-        "name": "planId",
+        "description": "Identifier of the action plan operation.",
+        "name": "operationId",
         "in": "path",
         "required": true,
         "type": "string",
