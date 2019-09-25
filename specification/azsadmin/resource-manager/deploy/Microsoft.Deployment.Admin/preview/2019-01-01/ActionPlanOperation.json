@@ -55,7 +55,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/actionPlans/{planId}": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/actionPlans/{planId}/operations/{operationId}": {
       "post": {
         "x-ms-examples": {
           "Gets the specified action plan operation": {
@@ -76,6 +76,9 @@
           },
           {
             "$ref": "#/parameters/PlanIdParameter"
+          },
+          {
+            "$ref": "#/parameters/OperationIdParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -346,6 +349,14 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method"
+    },
+    "OperationIdParameter": {
+        "description": "Identifier of the action plan.",
+        "name": "planId",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "x-ms-parameter-location": "method"
     }
   },
   "securityDefinitions": {

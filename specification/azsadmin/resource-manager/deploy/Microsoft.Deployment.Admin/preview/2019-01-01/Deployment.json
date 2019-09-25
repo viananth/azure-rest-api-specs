@@ -49,7 +49,7 @@
   },
   "definitions": {
     "Resource": {
-      "description": "Base resource object.",
+      "description": "Object model of azure resource manager base.",
       "type": "object",
       "properties": {
         "id": {

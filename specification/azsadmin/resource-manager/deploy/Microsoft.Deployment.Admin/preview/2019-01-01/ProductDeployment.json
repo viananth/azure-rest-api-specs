@@ -99,7 +99,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductDeployment_Deploy",
+        "operationId": "ProductDeployment_Remove",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
