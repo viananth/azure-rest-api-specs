@@ -87,7 +87,7 @@
             "put": {
                 "x-ms-examples": {
                     "Creates a new product package.": {
-                        "$ref": "./examples/FileContainer/create.json"
+                        "$ref": "./examples/FileContainer/Create.json"
                     }
                 },
                 "description": "Creates a new file container.",
