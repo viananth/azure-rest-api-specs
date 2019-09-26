@@ -1,12 +1,12 @@
-# Gallery Admin
+# Deployment Admin
 
 > see https://aka.ms/autorest
 
-This is the AutoRest configuration file for Gallery Admin.
+This is the AutoRest configuration file for Deployment Admin.
 
 ---
 ## Getting Started
-To build the SDK for Gallery Admin, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
+To build the SDK for Deployment Admin, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
 
