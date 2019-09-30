@@ -178,7 +178,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductSubscription_Unlock",
+        "operationId": "ProductDeployment_Unlock",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
@@ -213,7 +213,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductSubscription_Lock",
+        "operationId": "ProductDeployment_Lock",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
