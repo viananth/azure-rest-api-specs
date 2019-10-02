@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/actionPlans/{planId}/operations": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/actionPlans/{planId}/operations": {
       "get": {
         "x-ms-examples": {
           "Lists the action plan operations": {
@@ -31,9 +31,6 @@
         "parameters": [
           {
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
             "$ref": "#/parameters/PlanIdParameter"
@@ -55,7 +52,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/actionPlans/{planId}/operations/{operationId}": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/actionPlans/{planId}/operations/{operationId}": {
       "get": {
         "x-ms-examples": {
           "Gets the specified action plan operation": {
@@ -70,9 +67,6 @@
         "parameters": [
           {
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
             "$ref": "#/parameters/PlanIdParameter"

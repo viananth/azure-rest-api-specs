@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/productDeployments/{productId}/bootstrap": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productDeployments/{productId}/bootstrap": {
       "post": {
         "x-ms-examples": {
           "Invokes bootstrap action on the product deployment": {
@@ -30,9 +30,6 @@
         "operationId": "ProductDeployment_BootStrap",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
             "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
@@ -55,7 +52,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/productDeployments/{productId}/deploy": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productDeployments/{productId}/deploy": {
       "post": {
         "x-ms-examples": {
           "Invokes deploy action on the product": {
@@ -69,9 +66,6 @@
         "operationId": "ProductDeployment_Deploy",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
             "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
@@ -94,7 +88,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/productDeployments/{productId}/remove": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productDeployments/{productId}/remove": {
       "post": {
         "x-ms-examples": {
           "Invokes remove action on the product deployment": {
@@ -108,9 +102,6 @@
         "operationId": "ProductDeployment_Remove",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
             "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
@@ -131,7 +122,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/productDeployments/{productId}/rotateSecrets": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productDeployments/{productId}/rotateSecrets": {
       "post": {
         "x-ms-examples": {
           "Invokes rotate secrets action on the product deployment": {
@@ -145,9 +136,6 @@
         "operationId": "ProductDeployment_RotateSecrets",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
             "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
@@ -167,7 +155,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/productDeployments/{productId}/unlock": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productDeployments/{productId}/unlock": {
       "post": {
         "x-ms-examples": {
           "Unlocks the product subscription": {
@@ -181,9 +169,6 @@
         "operationId": "ProductDeployment_Unlock",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
             "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
@@ -202,7 +187,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/{location}/productDeployments/{productId}/lock": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Deployment.Admin/locations/global/productDeployments/{productId}/lock": {
       "post": {
         "x-ms-examples": {
           "locks the product subscription": {
@@ -216,9 +201,6 @@
         "operationId": "ProductDeployment_Lock",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "Deployment.json#/parameters/LocationParameter"
           },
           {
             "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
