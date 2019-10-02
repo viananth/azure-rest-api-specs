@@ -242,7 +242,7 @@
       "properties": {
         "version": {
           "description": "Generic Version object",
-          "$ref": "#/definitions/GenericVersion"
+          "type": "string"
         },
         "parameters": {
           "description": "Deployment parameters, value in JToken",
@@ -256,7 +256,7 @@
       "properties": {
         "version": {
           "description": "Generic Version object",
-          "$ref": "#/definitions/GenericVersion"
+          "type": "string"
         }
       }
     },
@@ -266,16 +266,6 @@
       "properties": {
         "duration": {
           "description": "Duration in TimeSpan format(Define which ISO format)",
-          "type": "string"
-        }
-      }
-    },
-    "GenericVersion": {
-      "description": "Represents a version string",
-      "type": "object",
-      "properties": {
-        "versionString": {
-          "description": "Version string in the format of integers seperated with dots",
           "type": "string"
         }
       }
@@ -315,9 +305,7 @@
       "name": "deployActionParameter",
       "in": "body",
       "required": true,
-      "schema": {
-        "$ref": "#/definitions/GenericVersion"
-      },
+      "type": "string",
       "x-ms-parameter-location": "method"
     }
   },

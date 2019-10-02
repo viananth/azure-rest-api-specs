@@ -118,11 +118,11 @@
       "properties": {
         "actionPlanInstanceId": {
           "description": "Action plan instance identifier",
-          "$ref": "#/definitions/GenericIdentifier"
+          "type": "string"
         },
         "actionPlanOperationId": {
           "description": "Action plan operation identifier",
-          "$ref": "#/definitions/GenericIdentifier"
+          "type": "string"
         },
         "blobContainerName": {
           "description": "Blob container name storing the deployment data",
@@ -134,16 +134,6 @@
         },
         "eTag": {
           "description": "Entity tag of the resource",
-          "type": "string"
-        }
-      }
-    },
-    "GenericIdentifier": {
-      "description": "Parameters for bootstrap action",
-      "type": "object",
-      "properties": {
-        "value": {
-          "description": "Identifier Value",
           "type": "string"
         }
       }
@@ -192,7 +182,7 @@
         },
         "provisioningState": {
           "description": "The provisioning state",
-          "$ref": "ActionPlan.json#/definitions/ProvisioningState"
+          "type": "string"
         }
       }
     },

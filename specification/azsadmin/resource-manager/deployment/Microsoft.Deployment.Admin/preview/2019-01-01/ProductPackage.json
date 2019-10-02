@@ -144,7 +144,7 @@
         },
         "provisioningState": {
           "description": "Provisioning state of the resource.",
-          "$ref": "ActionPlan.json#/definitions/ProvisioningState"
+          "type": "string"
         }
       },
       "allOf": [{

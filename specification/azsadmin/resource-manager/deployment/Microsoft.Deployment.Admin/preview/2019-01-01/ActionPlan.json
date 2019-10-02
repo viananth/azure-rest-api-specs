@@ -104,7 +104,7 @@
       "properties": {
         "actionPlanInstanceId": {
           "description": "Action plan instance identifier",
-          "$ref": "#/definitions/GenericIdentifier"
+          "type": "string"
         },
         "blobContainerName": {
           "description": "Blob container name storing the deployment data",
@@ -116,16 +116,6 @@
         },
         "eTag": {
           "description": "Entity tag of the resource",
-          "type": "string"
-        }
-      }
-    },
-    "GenericIdentifier": {
-      "description": "Parameters for bootstrap action",
-      "type": "object",
-      "properties": {
-        "value": {
-          "description": "Identifier Value",
           "type": "string"
         }
       }
@@ -166,7 +156,7 @@
         },
         "provisioningState": {
           "description": "The provisioning state",
-          "$ref": "#/definitions/ProvisioningState"
+          "type": "string"
         }
       }
     },
@@ -185,20 +175,6 @@
         "details": {
           "description": "Error message details",
           "$ref": "#/definitions/ExtendedErrorInfo"
-        }
-      }
-    },
-    "ProvisioningState": {
-      "description": "Provisioning state value",
-      "type": "object",
-      "properties": {
-        "state": {
-          "description": "The provisioning state",
-          "type": "string"
-        },
-        "isTerminal": {
-          "description": "a value indicating whether this instance is terminal",
-          "type": "boolean"
         }
       }
     }
