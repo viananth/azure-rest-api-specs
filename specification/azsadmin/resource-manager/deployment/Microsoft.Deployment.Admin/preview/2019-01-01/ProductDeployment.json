@@ -287,7 +287,9 @@
       "name": "deployActionParameter",
       "in": "body",
       "required": true,
-      "type": "string",
+      "schema": {
+        "$ref": "#/definitions/DeployActionParameters"
+      },
       "x-ms-parameter-location": "method"
     }
   },
