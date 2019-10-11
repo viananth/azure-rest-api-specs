@@ -27,7 +27,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductDeployment_BootStrap",
+        "operationId": "ProductDeployments_BootStrap",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
@@ -63,7 +63,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductDeployment_Deploy",
+        "operationId": "ProductDeployments_Deploy",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
@@ -99,7 +99,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductDeployment_Remove",
+        "operationId": "ProductDeployments_Remove",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
@@ -133,7 +133,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductDeployment_RotateSecrets",
+        "operationId": "ProductDeployments_RotateSecrets",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
@@ -166,7 +166,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductDeployment_Unlock",
+        "operationId": "ProductDeployments_Unlock",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
@@ -198,7 +198,7 @@
         "tags": [
           "ProductDeployments"
         ],
-        "operationId": "ProductDeployment_Lock",
+        "operationId": "ProductDeployments_Lock",
         "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },

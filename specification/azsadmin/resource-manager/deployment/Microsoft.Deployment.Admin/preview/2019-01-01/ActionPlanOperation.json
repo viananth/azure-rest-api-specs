@@ -27,7 +27,7 @@
         "tags": [
           "ActionPlanOperations"
         ],
-        "operationId": "ActionPlanOperation_List",
+        "operationId": "ActionPlanOperations_List",
         "parameters": [
           {
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
@@ -63,7 +63,7 @@
         "tags": [
           "ActionPlanOperations"
         ],
-        "operationId": "ActionPlanOperation_Get",
+        "operationId": "ActionPlanOperations_Get",
         "parameters": [
           {
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
