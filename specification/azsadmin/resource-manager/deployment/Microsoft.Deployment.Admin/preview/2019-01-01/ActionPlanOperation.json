@@ -172,29 +172,11 @@
         },
         "error": {
           "description": "Error Information",
-          "$ref": "#/definitions/ExtendedErrorInfo"
+          "$ref": "Deployment.json#/definitions/ExtendedErrorInfo"
         },
         "provisioningState": {
           "description": "The provisioning state",
           "type": "string"
-        }
-      }
-    },
-    "ExtendedErrorInfo": {
-      "description": "Error information",
-      "type": "object",
-      "properties": {
-        "code": {
-          "description": "Error Code",
-          "type": "string"
-        },
-        "message": {
-          "description": "Error Message",
-          "type": "string"
-        },
-        "details": {
-          "description": "Error message details",
-          "$ref": "#/definitions/ExtendedErrorInfo"
         }
       }
     },

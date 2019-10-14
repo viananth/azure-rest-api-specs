@@ -74,6 +74,24 @@
       },
       "x-ms-azure-resource": true
     },
+    "ExtendedErrorInfo": {
+        "description": "Error information",
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Error Code",
+            "type": "string"
+          },
+          "message": {
+            "description": "Error Message",
+            "type": "string"
+          },
+          "details": {
+            "description": "Error message details",
+            "$ref": "#/definitions/ExtendedErrorInfo"
+          }
+        }
+      },
     "Operation": {
       "description": "Describes the supported REST operation.",
       "properties": {
