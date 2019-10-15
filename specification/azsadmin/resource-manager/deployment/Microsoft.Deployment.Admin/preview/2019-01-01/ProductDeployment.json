@@ -56,7 +56,7 @@
             "tags": [
             "ProductDeployments"
             ],
-            "operationId": "ProductDeployments_List",
+            "operationId": "ProductDeployments_Get",
             "parameters": [{
                 "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
             },
@@ -71,7 +71,7 @@
             "200": {
                 "description": "Ok",
                 "schema": {
-                    "$ref": "#/definitions/ProductDeploymentsList"
+                    "$ref": "#/definitions/ProductDeploymentResourceEntity"
                 }                
                 }
             }
@@ -296,83 +296,69 @@
         }
      }
     },
-    "ProductDeploymentResourceEntity":{
-        "type": "object",
-        "description": "Product deployment entity",
-        "properties":{
-            "productId":{
-                "description": "The product identifier",
-                "type":"string"
-            },
-            "properties":{
-                "description": "Product deployment resource properties",
-                "schema": {
-                    "$ref": "#/definitions/ProductDeploymentsProperties"
-                },
-                "x-ms-client-flatten": true
-            },
-            "internalState":{
-                "description": "Product deployment resource internal state",
-                "schema": {
-                    "$ref": "#/definitions/ProductDeploymentsInternalState"
-                }
-            },
-            "eTag":{
-                "description": "entity tag"
-            }
+    "ProductDeploymentResourceEntity": {
+      "type": "object",
+      "description": "Product deployment entity",
+      "properties": {
+        "productId": {
+          "description": "The product identifier",
+          "type": "string"
+        },
+        "properties": {
+          "description": "Product deployment resource properties",
+          "$ref": "#/definitions/ProductDeploymentsProperties",
+          "x-ms-client-flatten": true
+        },
+        "internalState": {
+          "description": "Product deployment resource internal state",
+          "$ref": "#/definitions/ProductDeploymentsInternalState"
+        },
+        "eTag": {
+          "description": "entity tag"
         }
+      }
     },
-    "ProductDeploymentsProperties":{
-        "type": "object",
-        "description": "Product deployment resource properties",
-        "properties":{
-            "status": {
-                "description": "Status of the product deployment.",
-                "$ref": "#/definitions/OperationStatus"
-              },
-            "subscriptionId":{
-                "description": "The product subscription identifier",
-                "type":"string"
-            },
-            "deployment":{
-                "description": "The current deployment information",
-                "schema": {
-                    "$ref": "#/definitions/DeploymentInfo"
-                }
-            },
-            "lastSuccessfulDeployment":{
-                "description": "The last successful deployment information",
-                "schema": {
-                    "$ref": "#/definitions/DeploymentInfo"
-                }
-            },
-            "secretRotation":{
-                "description": "Resource provider secret rotation information",
-                "schema": {
-                    "$ref": "#/definitions/SecretRotationInfo"
-                }
-            },
-            "internalState":{
-                "description": "Product deployment resource internal state",
-                "schema": {
-                    "$ref": "#/definitions/ProductDeploymentsInternalState"
-                }
-            },
-            "error": {
-                "description": "Error Information",
-                "$ref": "Deployment.json#/definitions/ExtendedErrorInfo"
-            },
-            "externalAccess":{
-                "description": "Resource provider secret rotation information",
-                "schema": {
-                    "$ref": "#/definitions/ExternalAccessInfo"
-                }
-            },
-            "provisioningState": {
-                "description": "The provisioning state",
-                "type": "string"
-              }            
+    "ProductDeploymentsProperties": {
+      "type": "object",
+      "description": "Product deployment resource properties",
+      "properties": {
+        "status": {
+          "description": "Status of the product deployment.",
+          "$ref": "#/definitions/OperationStatus"
+        },
+        "subscriptionId": {
+          "description": "The product subscription identifier",
+          "type": "string"
+        },
+        "deployment": {
+          "description": "The current deployment information",
+          "$ref": "#/definitions/DeploymentInfo"
+        },
+        "lastSuccessfulDeployment": {
+          "description": "The last successful deployment information",
+          "$ref": "#/definitions/DeploymentInfo"
+        },
+        "secretRotation": {
+          "description": "Resource provider secret rotation information",
+          "$ref": "#/definitions/SecretRotationInfo"
+        },
+        "internalState": {
+          "description": "Product deployment resource internal state",
+          "$ref": "#/definitions/ProductDeploymentsInternalState"
+        },
+        "error": {
+          "description": "Error Information",
+          "$ref": "Deployment.json#/definitions/ExtendedErrorInfo"
+        },
+        "externalAccess": {
+          "description": "Resource provider secret rotation information",
+          "$ref": "#/definitions/ExternalAccessInfo"
+        },
+        "provisioningState": {
+          "description": "The provisioning state",
+          "type": "string"
         }
+      }
     },
     "DeploymentStatus": {
         "description": "Status of an operation.",
