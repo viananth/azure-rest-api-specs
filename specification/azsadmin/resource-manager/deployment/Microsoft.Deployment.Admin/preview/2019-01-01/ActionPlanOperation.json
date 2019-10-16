@@ -28,8 +28,7 @@
           "ActionPlanOperations"
         ],
         "operationId": "ActionPlanOperations_List",
-        "parameters": [
-          {
+        "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
@@ -64,8 +63,7 @@
           "ActionPlanOperations"
         ],
         "operationId": "ActionPlanOperations_Get",
-        "parameters": [
-          {
+        "parameters": [{
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
@@ -84,6 +82,9 @@
             "schema": {
               "$ref": "#/definitions/ActionPlanOperationResourceEntity"
             }
+          },
+          "404": {
+            "description": "NOT FOUND"
           }
         }
       }
@@ -122,15 +123,19 @@
           "description": "Blob container name storing the deployment data",
           "type": "string"
         },
-        "actionPlanOperationAdminProperties": {
+        "properties": {
           "description": "Action Plan Properties",
-          "$ref": "#/definitions/ActionPlanOperationAdminProperties"
+          "$ref": "#/definitions/ActionPlanOperationAdminProperties",
+          "x-ms-client-flatten": true
         },
         "eTag": {
           "description": "Entity tag of the resource",
           "type": "string"
         }
-      }
+      },
+      "allOf": [{
+        "$ref": "Deployment.json#/definitions/Resource"
+      }]
     },
     "ActionPlanOperationAdminProperties": {
       "description": "Action Plan Operation Properties",
@@ -201,12 +206,12 @@
       "x-ms-parameter-location": "method"
     },
     "OperationIdParameter": {
-        "description": "Identifier of the action plan operation.",
-        "name": "operationId",
-        "in": "path",
-        "required": true,
-        "type": "string",
-        "x-ms-parameter-location": "method"
+      "description": "Identifier of the action plan operation.",
+      "name": "operationId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
     }
   },
   "securityDefinitions": {
@@ -220,11 +225,9 @@
       }
     }
   },
-  "security": [
-    {
-      "azure_auth": [
-        "user_impersonation"
-      ]
-    }
-  ]
+  "security": [{
+    "azure_auth": [
+      "user_impersonation"
+    ]
+  }]
 }

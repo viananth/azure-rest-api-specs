@@ -116,7 +116,7 @@
         "properties": {
           "description": "Action Plan Properties",
           "$ref": "#/definitions/ActionPlanAdminProperties",
-          "x-ms-client-flatten": "true"
+          "x-ms-client-flatten": true
         },
         "eTag": {
           "description": "Entity tag of the resource",
