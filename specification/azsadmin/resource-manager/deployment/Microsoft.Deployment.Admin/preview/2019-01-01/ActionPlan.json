@@ -76,6 +76,9 @@
             "schema": {
               "$ref": "#/definitions/ActionPlanResourceEntity"
             }
+          },
+          "404": {
+            "description": "NOT FOUND"
           }
         }
       }
@@ -110,15 +113,19 @@
           "description": "Blob container name storing the deployment data",
           "type": "string"
         },
-        "actionPlanAdminProperties": {
+        "properties": {
           "description": "Action Plan Properties",
-          "$ref": "#/definitions/ActionPlanAdminProperties"
+          "$ref": "#/definitions/ActionPlanAdminProperties",
+          "x-ms-client-flatten": "true"
         },
         "eTag": {
           "description": "Entity tag of the resource",
           "type": "string"
         }
-      }
+      },
+      "allOf": [{
+        "$ref": "Deployment.json#/definitions/Resource"
+      }]
     },
     "ActionPlanAdminProperties": {
       "description": "Action Plan Properties",
@@ -138,7 +145,8 @@
         },
         "parameters": {
           "description": "The deployment parameters in JToken format",
-          "type": "string"
+          "type": "object",
+          "$ref": "Deployment.json#/definitions/JTokenString"
         },
         "startTime": {
           "description": "The deployment start time",

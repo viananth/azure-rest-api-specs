@@ -1,20 +1,20 @@
 {
-    "swagger": "2.0",
-    "info": {
-      "version": "2019-01-01",
-      "title": "DeploymentAdminClient",
-      "description": "Deployment Admin Client."
-    },
-    "host": "adminmanagement.local.azurestack.external",
-    "schemes": [
-      "https"
-    ],
-    "produces": [
-      "application/json"
-    ],
-    "consumes": [
-      "application/json"
-    ],
+  "swagger": "2.0",
+  "info": {
+    "version": "2019-01-01",
+    "title": "DeploymentAdminClient",
+    "description": "Deployment Admin Client."
+  },
+  "host": "adminmanagement.local.azurestack.external",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
   "paths": {
     "/providers/Microsoft.Deployment.Admin/operations": {
       "get": {
@@ -28,11 +28,9 @@
           "Deployment"
         ],
         "operationId": "Operations_List",
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
+        "parameters": [{
+          "$ref": "#/parameters/ApiVersionParameter"
+        }],
         "responses": {
           "200": {
             "description": "OK",
@@ -75,23 +73,33 @@
       "x-ms-azure-resource": true
     },
     "ExtendedErrorInfo": {
-        "description": "Error information",
-        "type": "object",
-        "properties": {
-          "code": {
-            "description": "Error Code",
-            "type": "string"
-          },
-          "message": {
-            "description": "Error Message",
-            "type": "string"
-          },
-          "details": {
-            "description": "Error message details",
-            "$ref": "#/definitions/ExtendedErrorInfo"
-          }
+      "description": "Error information",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error Code",
+          "type": "string"
+        },
+        "message": {
+          "description": "Error Message",
+          "type": "string"
+        },
+        "details": {
+          "description": "Error message details",
+          "$ref": "#/definitions/ExtendedErrorInfo"
         }
-      },
+      }
+    },
+    "JTokenString": {
+      "description": "Error information",
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Parameters as JToken string",
+          "type": "string"
+        }
+      }
+    },
     "Operation": {
       "description": "Describes the supported REST operation.",
       "properties": {
@@ -169,13 +177,13 @@
       "default": "2019-01-01"
     },
     "ProductIdParameter": {
-        "name": "productId",
-        "in": "path",
-        "description": "The product identifier.",
-        "required": true,
-        "type": "string",
-        "x-ms-parameter-location": "method"
-      }
+      "name": "productId",
+      "in": "path",
+      "description": "The product identifier.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    }
   },
   "securityDefinitions": {
     "azure_auth": {
@@ -188,11 +196,9 @@
       }
     }
   },
-  "security": [
-    {
-      "azure_auth": [
-        "user_impersonation"
-      ]
-    }
-  ]
+  "security": [{
+    "azure_auth": [
+      "user_impersonation"
+    ]
+  }]
 }
