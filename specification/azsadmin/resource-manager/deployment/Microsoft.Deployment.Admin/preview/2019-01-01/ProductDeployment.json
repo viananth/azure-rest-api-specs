@@ -64,7 +64,7 @@
                 "$ref": "Deployment.json#/parameters/ApiVersionParameter"
             },
             {
-                "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
+                "$ref": "Deployment.json#/parameters/ProductIdParameter"
             }
             ],
             "responses": {
@@ -93,10 +93,10 @@
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
+            "$ref": "Deployment.json#/parameters/ProductIdParameter"
           },
           {
-            "$ref": "ProductPackage.json#/parameters/BootstrapActionParameter"
+            "$ref": "ProductDeployment.json#/parameters/BootstrapActionParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -129,7 +129,7 @@
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
+            "$ref": "Deployment.json#/parameters/ProductIdParameter"
           },
           {
             "$ref": "ProductDeployment.json#/parameters/DeployActionParameter"
@@ -165,7 +165,7 @@
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "ProductDeployment.json#/parameters/ProductIdParameter"
+            "$ref": "Deployment.json#/parameters/ProductIdParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -199,7 +199,7 @@
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
+            "$ref": "Deployment.json#/parameters/ProductIdParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -232,7 +232,7 @@
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
+            "$ref": "Deployment.json#/parameters/ProductIdParameter"
           },
           {
             "$ref": "ProductDeployment.json#/parameters/UnlockActionParameter"
@@ -264,7 +264,7 @@
             "$ref": "Deployment.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "ProductPackage.json#/parameters/ProductIdParameter"
+            "$ref": "Deployment.json#/parameters/ProductIdParameter"
           },
           {
             "$ref": "Deployment.json#/parameters/ApiVersionParameter"
@@ -324,7 +324,7 @@
       "properties": {
         "status": {
           "description": "Status of the product deployment.",
-          "$ref": "#/definitions/OperationStatus"
+          "$ref": "#/definitions/DeploymentStatus"
         },
         "subscriptionId": {
           "description": "The product subscription identifier",

@@ -168,22 +168,14 @@
       "x-ms-parameter-location": "method",
       "default": "2019-01-01"
     },
-    "PublisherParameter": {
-      "description": "Name of the publisher.",
-      "name": "publisher",
-      "in": "path",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
-    },
-    "VersionParameter": {
-      "description": "The version of the resource.",
-      "name": "version",
-      "in": "path",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
-    }
+    "ProductIdParameter": {
+        "name": "productId",
+        "in": "path",
+        "description": "The product identifier.",
+        "required": true,
+        "type": "string",
+        "x-ms-parameter-location": "method"
+      }
   },
   "securityDefinitions": {
     "azure_auth": {
