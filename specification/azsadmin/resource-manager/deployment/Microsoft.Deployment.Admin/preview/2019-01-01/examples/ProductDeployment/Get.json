@@ -17,6 +17,8 @@
           "provisioningState": "Succeeded"
         }
       }
+    },
+    "404": {
     }
   }
 }
