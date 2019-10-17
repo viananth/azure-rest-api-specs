@@ -118,12 +118,15 @@
                     },
                     "202": {
                         "description": "Accepted"
-                    },
-                    "404": {
-                        "description": "Not Found"
                     }
                 },
-                "x-ms-long-running-operation": true
+                "x-ms-long-running-operation": true,
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
             },
             "delete": {
                 "x-ms-examples": {
@@ -161,6 +164,22 @@
             "description": "Properties for a file container.",
             "type": "object",
             "properties": {
+                "properties": {
+                    "description": "File Container properties",
+                    "$ref": "#/definitions/FileContainerAdminProperties",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Deployment.json#/definitions/Resource"
+                }
+            ]
+        },
+        "FileContainerAdminProperties": {
+            "description": "File Container Properties.",
+            "type": "object",
+            "properties": {
                 "fileContainerId": {
                     "description": "File container resource identifier containing product manifest.",
                     "$ref": "#/definitions/FileContainerId"
@@ -169,13 +188,13 @@
                     "description": "The remote file location. This is write-only property, DRP never returns it back to a user.",
                     "$ref": "#/definitions/SourceUri"
                 },
-                "postCopyAction": {
-                    "description": "Specifies the file post copy action.",
-                    "$ref": "#/definitions/PostCopyAction"
-                },
                 "uri": {
                     "description": "The file or container Uri. This is read-only property; a user cannot set it.",
                     "type": "string"
+                },
+                "postCopyAction": {
+                    "description": "Specifies the file post copy action.",
+                    "$ref": "#/definitions/PostCopyAction"
                 },
                 "error": {
                     "description": "The error response message.",
@@ -185,15 +204,9 @@
                     "description": "Provisioning state of the resource.",
                     "type": "string"
                 }
-            },
-            "allOf": [
-                {
-                    "$ref": "Deployment.json#/definitions/Resource"
-                }
-            ]
+            }
         },
         "FileContainersList": {
-            "type": "object",
             "description": "List of file containers.",
             "properties": {
                 "value": {
@@ -204,7 +217,7 @@
                     }
                 },
                 "nextLink": {
-                    "description": "URI to the next page.",
+                    "description": "Continuation token.",
                     "type": "string"
                 }
             }
@@ -254,15 +267,15 @@
             "description": "Parameters for creating a new file container.",
             "type": "object",
             "properties": {
-              "postCopyAction": {
-                "description": "Specifies the file post copy action.",
-                "$ref": "#/definitions/PostCopyAction"
-              },
-              "sourceUri": {
-                "description": "Specifies The remote file location.",
-                "$ref": "#/definitions/SourceUri"
-              }
-            }      
+                "postCopyAction": {
+                    "description": "Specifies the file post copy action.",
+                    "$ref": "#/definitions/PostCopyAction"
+                },
+                "sourceUri": {
+                    "description": "Specifies The remote file location.",
+                    "$ref": "#/definitions/SourceUri"
+                }
+            }
         }
     },
     "parameters": {
