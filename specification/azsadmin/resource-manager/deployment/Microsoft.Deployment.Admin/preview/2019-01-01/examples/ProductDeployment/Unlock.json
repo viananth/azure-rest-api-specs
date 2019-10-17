@@ -4,7 +4,7 @@
     "location": "global",
     "api-version": "2019-01-01",
     "productId": "Microsoft.IotHubPreview",
-    "unlockActionParameters": {
+    "unlockActionParameter": {
         "duration":"P5D"
     }
   },

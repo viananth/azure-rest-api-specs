@@ -161,7 +161,7 @@
     },
     "definitions": {
         "FileContainer": {
-            "description": "Properties for a file container.",
+            "description": "File container entity.",
             "type": "object",
             "properties": {
                 "properties": {
