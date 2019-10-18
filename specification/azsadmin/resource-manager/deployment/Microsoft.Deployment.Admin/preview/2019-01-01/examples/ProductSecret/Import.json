@@ -4,7 +4,12 @@
     "location": "global",
     "api-version": "2019-01-01",
     "productId": "Microsoft.IotHubPreview.1.0.2",
-    "secretValue": "sslCert",
+    "secretName": "secretName",
+    "secretParameters": {
+      "properties": {
+        "secretValue": "sslCert"
+      }
+    },
     "newOffer": {
       "properties": {
         "password": "password",
@@ -13,6 +18,7 @@
     }
   },
   "responses": {
-    "200": {}
+    "200": {},
+    "404": {}
   }
 }

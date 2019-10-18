@@ -4,6 +4,7 @@
         "location": "global",
         "api-version": "2019-01-01",
         "productId": "Microsoft.IotHubPreview.1.0.2",
+        "secretName": "secretName",
         "secretValue": "sslCert"
     },
     "responses": {
@@ -25,6 +26,7 @@
                 },
                 "provisioningState": "Succeeded"
             }
-        }
+        },
+        "404": {}
     }
 }
