@@ -439,8 +439,7 @@
             "HighAvailability",
             "Security",
             "Performance",
-            "Cost",
-            "OperationalExcellence"
+            "Cost"
           ],
           "type": "string",
           "x-ms-enum": {

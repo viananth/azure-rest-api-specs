@@ -305,103 +305,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters/{clusterName}/listFollowerDatabases": {
-      "post": {
-        "tags": [
-          "Clusters"
-        ],
-        "description": "Returns a list of databases that are owned by this cluster and were followed by another cluster.",
-        "operationId": "Clusters_ListFollowerDatabases",
-        "x-ms-examples": {
-          "KustoClusterListFollowerDatabases": {
-            "$ref": "./examples/KustoClusterListFollowerDatabases.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceGroupParameter"
-          },
-          {
-            "$ref": "#/parameters/ClusterNameParameter"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successfully retrieved the list of followed databases.",
-            "schema": {
-              "$ref": "#/definitions/FollowerDatabaseListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": null
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters/{clusterName}/detachFollowerDatabases": {
-      "post": {
-        "tags": [
-          "Clusters"
-        ],
-        "description": "Detaches all followers of a database owned by this cluster.",
-        "operationId": "Clusters_DetachFollowerDatabases",
-        "x-ms-examples": {
-          "KustoClusterDetachFollowerDatabases": {
-            "$ref": "./examples/KustoClusterDetachFollowerDatabases.json"
-          }
-        },
-        "x-ms-long-running-operation": true,
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceGroupParameter"
-          },
-          {
-            "$ref": "#/parameters/ClusterNameParameter"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "name": "followerDatabaseToRemove",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/FollowerDatabaseDefinition"
-            },
-            "description": "The follower databases properties to remove."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK."
-          },
-          "202": {
-            "description": "Accepted"
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters": {
       "get": {
         "tags": [
@@ -503,9 +406,7 @@
         "responses": {
           "200": {
             "description": "OK.",
-            "schema": {
-              "$ref": "#/definitions/SkuDescriptionList"
-            }
+            "schema": { "$ref": "#/definitions/SkuDescriptionList" }
           },
           "default": {
             "description": "Error response describing why the operation failed.",
@@ -597,13 +498,13 @@
             "$ref": "#/parameters/SubscriptionIdParameter"
           },
           {
-            "name": "resourceName",
+            "name": "databaseName",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/CheckNameRequest"
+              "$ref": "#/definitions/DatabaseCheckNameRequest"
             },
-            "description": "The name of the resource."
+            "description": "The name of the database."
           }
         ],
         "responses": {
@@ -651,9 +552,7 @@
         "responses": {
           "200": {
             "description": "OK.",
-            "schema": {
-              "$ref": "#/definitions/ListResourceSkusResult"
-            }
+            "schema": { "$ref": "#/definitions/ListResourceSkusResult" }
           },
           "default": {
             "description": "Error response describing why the operation failed.",
@@ -811,7 +710,7 @@
             "schema": {
               "$ref": "#/definitions/Database"
             }
-          },
+          }, 
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
@@ -847,7 +746,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Database"
+              "$ref": "#/definitions/DatabaseUpdate"
             },
             "description": "The database parameters supplied to the Update operation."
           },
@@ -1034,208 +933,6 @@
             }
           }
         }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters/{clusterName}/attachedDatabaseConfigurations": {
-      "get": {
-        "tags": [
-          "AttachedDatabaseConfigurations"
-        ],
-        "description": "Returns the list of attached database configurations of the given Kusto cluster.",
-        "operationId": "AttachedDatabaseConfigurations_ListByCluster",
-        "x-ms-examples": {
-          "KustoAttachedDatabaseConfigurationsListByCluster": {
-            "$ref": "./examples/KustoAttachedDatabaseConfigurationsListByCluster.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceGroupParameter"
-          },
-          {
-            "$ref": "#/parameters/ClusterNameParameter"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successfully retrieved the list of attached database configurations.",
-            "schema": {
-              "$ref": "#/definitions/AttachedDatabaseConfigurationListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": null
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters/{clusterName}/attachedDatabaseConfigurations/{attachedDatabaseConfigurationName}": {
-      "get": {
-        "tags": [
-          "AttachedDatabaseConfigurations"
-        ],
-        "description": "Returns an attached database configuration.",
-        "operationId": "AttachedDatabaseConfigurations_Get",
-        "x-ms-examples": {
-          "AttachedDatabaseConfigurationsGet": {
-            "$ref": "./examples/KustoAttachedDatabaseConfigurationsGet.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceGroupParameter"
-          },
-          {
-            "$ref": "#/parameters/ClusterNameParameter"
-          },
-          {
-            "$ref": "#/parameters/AttachedDatabaseConfigurationNameParameter"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successfully retrieved the specified attached database configuration.",
-            "schema": {
-              "$ref": "#/definitions/AttachedDatabaseConfiguration"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "AttachedDatabaseConfigurations"
-        ],
-        "description": "Creates or updates an attached database configuration.",
-        "operationId": "AttachedDatabaseConfigurations_CreateOrUpdate",
-        "x-ms-examples": {
-          "AttachedDatabaseConfigurationsCreateOrUpdate": {
-            "$ref": "./examples/KustoAttachedDatabaseConfigurationsCreateOrUpdate.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceGroupParameter"
-          },
-          {
-            "$ref": "#/parameters/ClusterNameParameter"
-          },
-          {
-            "$ref": "#/parameters/AttachedDatabaseConfigurationNameParameter"
-          },
-          {
-            "name": "parameters",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/AttachedDatabaseConfiguration"
-            },
-            "description": "The database parameters supplied to the CreateOrUpdate operation."
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successfully updated the database.",
-            "schema": {
-              "$ref": "#/definitions/AttachedDatabaseConfiguration"
-            }
-          },
-          "201": {
-            "description": "Successfully created the database.",
-            "schema": {
-              "$ref": "#/definitions/AttachedDatabaseConfiguration"
-            }
-          },
-          "202": {
-            "description": "Accepted the create database request.",
-            "schema": {
-              "$ref": "#/definitions/AttachedDatabaseConfiguration"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-long-running-operation": true
-      },
-      "delete": {
-        "tags": [
-          "AttachedDatabaseConfigurations"
-        ],
-        "description": "Deletes the attached database configuration with the given name.",
-        "operationId": "AttachedDatabaseConfigurations_Delete",
-        "x-ms-examples": {
-          "AttachedDatabaseConfigurationsDelete": {
-            "$ref": "./examples/KustoAttachedDatabaseConfigurationsDelete.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceGroupParameter"
-          },
-          {
-            "$ref": "#/parameters/ClusterNameParameter"
-          },
-          {
-            "$ref": "#/parameters/AttachedDatabaseConfigurationNameParameter"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successfully deleted the database."
-          },
-          "202": {
-            "description": "Accepted."
-          },
-          "204": {
-            "description": "The specified database does not exist."
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters/{clusterName}/databases/{databaseName}/removePrincipals": {
@@ -1793,7 +1490,7 @@
           "type": "object",
           "$ref": "#/definitions/KeyVaultProperties",
           "description": "KeyVault properties for the cluster encryption."
-        }
+        } 
       },
       "description": "Class representing the Kusto cluster properties."
     },
@@ -2056,63 +1753,7 @@
       },
       "description": "A class that contains database statistics information."
     },
-    "AttachedDatabaseConfigurationProperties": {
-      "properties": {
-        "provisioningState": {
-          "type": "string",
-          "readOnly": true,
-          "description": "The provisioned state of the resource.",
-          "enum": [
-            "Running",
-            "Creating",
-            "Deleting",
-            "Succeeded",
-            "Failed",
-            "Moving"
-          ],
-          "x-ms-enum": {
-            "name": "ProvisioningState",
-            "modelAsString": true
-          }
-        },
-        "databaseName": {
-          "type": "string",
-          "description": "The name of the database which you would like to attach, use * if you want to follow all current and future databases."
-        },
-        "clusterResourceId": {
-          "type": "string",
-          "description": "The resource id of the cluster where the databases you would like to attach reside."
-        },
-        "attachedDatabaseNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "readOnly": true,
-          "description": "The list of databases from the clusterResourceId which are currently attached to the cluster."
-        },
-        "defaultPrincipalsModificationKind": {
-          "type": "string",
-          "enum": [
-            "Union",
-            "Replace",
-            "None"
-          ],
-          "x-ms-enum": {
-            "name": "DefaultPrincipalsModificationKind",
-            "modelAsString": true
-          },
-          "description": "The default principals modification kind"
-        }
-      },
-      "description": "Class representing the an attached database configuration properties of kind specific.",
-      "required": [
-        "databaseName",
-        "clusterResourceId",
-        "defaultPrincipalsModificationKind"
-      ]
-    },
-    "ReadWriteDatabaseProperties": {
+    "DatabaseProperties": {
       "properties": {
         "provisioningState": {
           "type": "string",
@@ -2144,67 +1785,6 @@
         "statistics": {
           "$ref": "#/definitions/DatabaseStatistics",
           "description": "The statistics of the database."
-        }
-      },
-      "description": "Class representing the Kusto database properties."
-    },
-    "ReadOnlyFollowingDatabaseProperties": {
-      "properties": {
-        "provisioningState": {
-          "type": "string",
-          "readOnly": true,
-          "description": "The provisioned state of the resource.",
-          "enum": [
-            "Running",
-            "Creating",
-            "Deleting",
-            "Succeeded",
-            "Failed",
-            "Moving"
-          ],
-          "x-ms-enum": {
-            "name": "ProvisioningState",
-            "modelAsString": true
-          }
-        },
-        "softDeletePeriod": {
-          "type": "string",
-          "readOnly": true,
-          "format": "duration",
-          "description": "The time the data should be kept before it stops being accessible to queries in TimeSpan."
-        },
-        "hotCachePeriod": {
-          "type": "string",
-          "format": "duration",
-          "description": "The time the data should be kept in cache for fast queries in TimeSpan."
-        },
-        "statistics": {
-          "$ref": "#/definitions/DatabaseStatistics",
-          "description": "The statistics of the database."
-        },
-        "leaderClusterResourceId": {
-          "type": "string",
-          "readOnly": true,
-          "description": "The name of the leader cluster"
-        },
-        "attachedDatabaseConfigurationName": {
-          "type": "string",
-          "readOnly": true,
-          "description": "The name of the attached database configuration cluster"
-        },
-        "principalsModificationKind": {
-          "type": "string",
-          "readOnly": true,
-          "enum": [
-            "Union",
-            "Replace",
-            "None"
-          ],
-          "x-ms-enum": {
-            "name": "PrincipalsModificationKind",
-            "modelAsString": true
-          },
-          "description": "The principals modification kind of the database"
         }
       },
       "description": "Class representing the Kusto database properties."
@@ -2413,54 +1993,16 @@
       ],
       "description": "Class representing an update to a Kusto cluster."
     },
-    "AttachedDatabaseConfigurationListResult": {
-      "properties": {
-        "value": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/AttachedDatabaseConfiguration"
-          },
-          "description": "The list of attached database configurations."
-        }
-      },
-      "description": "The list attached database configurations operation response."
-    },
-    "AttachedDatabaseConfiguration": {
-      "properties": {
-        "location": {
-          "type": "string",
-          "description": "Resource location."
-        },
-        "properties": {
-          "x-ms-client-flatten": true,
-          "description": "The properties of the attached database configuration.",
-          "$ref": "#/definitions/AttachedDatabaseConfigurationProperties"
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ProxyResource"
-        }
-      ],
-      "description": "Class representing an attached database configuration."
-    },
     "Database": {
       "properties": {
         "location": {
           "type": "string",
           "description": "Resource location."
         },
-        "kind": {
-          "description": "Kind of the database",
-          "enum": [
-            "ReadWrite",
-            "ReadOnlyFollowing"
-          ],
-          "type": "string",
-          "x-ms-enum": {
-            "name": "Kind",
-            "modelAsString": true
-          }
+        "properties": {
+          "x-ms-client-flatten": true,
+          "description": "The database properties.",
+          "$ref": "#/definitions/DatabaseProperties"
         }
       },
       "allOf": [
@@ -2468,40 +2010,26 @@
           "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/ProxyResource"
         }
       ],
-      "description": "Class representing a Kusto database.",
-      "discriminator": "kind"
+      "description": "Class representing a Kusto database."
     },
-    "ReadWriteDatabase": {
+    "DatabaseUpdate": {
       "properties": {
+        "location": {
+          "type": "string",
+          "description": "Resource location."
+        },
         "properties": {
           "x-ms-client-flatten": true,
-          "description": "The database properties.",
-          "$ref": "#/definitions/ReadWriteDatabaseProperties"
+          "description": "The properties of the updated database.",
+          "$ref": "#/definitions/DatabaseProperties"
         }
       },
       "allOf": [
         {
-          "$ref": "#/definitions/Database"
+          "$ref": "../../../../../common-types/resource-management/v1/types.json#/definitions/Resource"
         }
       ],
-      "description": "Class representing a read write database.",
-      "x-ms-discriminator-value": "ReadWrite"
-    },
-    "ReadOnlyFollowingDatabase": {
-      "properties": {
-        "properties": {
-          "x-ms-client-flatten": true,
-          "description": "The database properties.",
-          "$ref": "#/definitions/ReadOnlyFollowingDatabaseProperties"
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "#/definitions/Database"
-        }
-      ],
-      "description": "Class representing a read only following database.",
-      "x-ms-discriminator-value": "ReadOnlyFollowing"
+      "description": "Class representing an update to a Kusto database."
     },
     "DatabasePrincipal": {
       "type": "object",
@@ -2600,18 +2128,6 @@
       },
       "description": "The list Kusto database principals operation response."
     },
-    "FollowerDatabaseListResult": {
-      "properties": {
-        "value": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/FollowerDatabaseDefinition"
-          },
-          "description": "The list of follower database result."
-        }
-      },
-      "description": "The list Kusto database principals operation response."
-    },
     "DataConnection": {
       "required": [
         "kind"
@@ -2664,29 +2180,6 @@
         }
       },
       "description": "The list Kusto database principals operation request."
-    },
-    "FollowerDatabaseDefinition": {
-      "type": "object",
-      "required": [
-        "clusterResourceId",
-        "attachedDatabaseConfigurationName"
-      ],
-      "properties": {
-        "clusterResourceId": {
-          "type": "string",
-          "description": "Resource id of the cluster that follows a database owned by this cluster."
-        },
-        "attachedDatabaseConfigurationName": {
-          "type": "string",
-          "description": "Resource name of the attached database configuration in the follower cluster."
-        },
-        "databaseName": {
-          "type": "string",
-          "readOnly": true,
-          "description": "The database name owned by this cluster that was followed. * in case following all databases."
-        }
-      },
-      "description": "A class representing follower database request."
     },
     "DataConnectionValidation": {
       "properties": {
@@ -2808,24 +2301,23 @@
       ],
       "description": "The result returned from a cluster check name availability request."
     },
-    "CheckNameRequest": {
+    "DatabaseCheckNameRequest": {
       "type": "object",
       "properties": {
         "name": {
           "type": "string",
-          "description": "Resource name."
+          "description": "Database name."
         },
         "type": {
           "type": "string",
           "enum": [
-            "Microsoft.Kusto/clusters/databases",
-            "Microsoft.Kusto/clusters/attachedDatabaseConfigurations"
+            "Microsoft.Kusto/clusters/databases"
           ],
           "x-ms-enum": {
             "name": "Type",
             "modelAsString": false
           },
-          "description": "The type of resource, for instance Microsoft.Kusto/clusters/databases."
+          "description": "The type of resource, Microsoft.Kusto/clusters/databases."
         }
       },
       "required": [
@@ -2895,9 +2387,7 @@
       "properties": {
         "value": {
           "type": "array",
-          "items": {
-            "$ref": "#/definitions/AzureResourceSku"
-          },
+          "items": { "$ref": "#/definitions/AzureResourceSku" },
           "description": "The collection of available SKUs for an existing resource."
         }
       }
@@ -3079,14 +2569,6 @@
       "name": "clusterName",
       "in": "path",
       "description": "The name of the Kusto cluster.",
-      "required": true,
-      "type": "string",
-      "x-ms-parameter-location": "method"
-    },
-    "AttachedDatabaseConfigurationNameParameter": {
-      "name": "attachedDatabaseConfigurationName",
-      "in": "path",
-      "description": "The name of the attached database configuration.",
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method"

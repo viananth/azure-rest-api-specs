@@ -26,18 +26,7 @@ These are the global settings for the StorageCache API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2019-11-01
-add-credentials: true
-title: StorageCacheManagementClient
-```
-
-### Tag: package-2019-11-01
-
-These settings apply only when `--tag=package-2019-11-01` is specified on the command line.
-
-``` yaml $(tag) == 'package-2019-11-01'
-input-file:
-- Microsoft.StorageCache/stable/2019-11-01/storagecache.json
+tag: package-2019-08
 ```
 
 ### Tag: package-2019-08
@@ -103,7 +92,6 @@ require: $(this-folder)/../../../profiles/readme.md
 
 # all the input files across all versions
 input-file:
-  - $(this-folder)/Microsoft.StorageCache/stable/2019-11-01/storagecache.json
   - $(this-folder)/Microsoft.StorageCache/preview/2019-08-01-preview/storagecache.json
 
 ```

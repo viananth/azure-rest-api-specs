@@ -38,15 +38,6 @@ input-file:
 - Microsoft.AppConfiguration/preview/2019-02-01-preview/appconfiguration.json
 ```
 
-### Tag: package-2019-10-01
-
-These settings apply only when `--tag=package-2019-10-01` is specified on the command line.
-
-``` yaml $(tag) == 'package-2019-10-01'
-input-file:
-- Microsoft.AppConfiguration/stable/2019-10-01/appconfiguration.json
-```
-
 ---
 
 # Code Generation
@@ -119,7 +110,6 @@ require: $(this-folder)/../../../profiles/readme.md
 # all the input files across all versions
 input-file:
   - $(this-folder)/Microsoft.AppConfiguration/preview/2019-02-01-preview/appconfiguration.json
-  - $(this-folder)/Microsoft.AppConfiguration/stable/2019-10-01/appconfiguration.json
 
 ```
 

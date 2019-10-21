@@ -26,32 +26,7 @@ These are the global settings for the Storage API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2019-06
-```
-
-### Tag: package-2019-06
-
-These settings apply only when `--tag=package-2019-06` is specified on the command line.
-
-``` yaml $(tag) == 'package-2019-06'
-input-file:
-- Microsoft.Storage/stable/2019-06-01/storage.json
-- Microsoft.Storage/stable/2019-06-01/blob.json
-- Microsoft.Storage/stable/2019-06-01/file.json
-
-directive:
-  - suppress: R3018
-    reason: Existing boolean properties
-    approved-by: "@fearthecowboy"
-
-  - where:
-    - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/setLegalHold"].post.operationId
-    - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers/{containerName}/clearLegalHold"].post.operationId
-    - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/regenerateKey"].post.operationId
-    suppress: R1003
-    reason: APIs return array of values, is not actually a 'list' operation
-    approved-by: "@fearthecowboy"
-
+tag: package-2019-04
 ```
 
 ### Tag: package-2019-04
@@ -294,9 +269,6 @@ require: $(this-folder)/../../../profiles/readme.md
 
 # all the input files across all versions
 input-file:
-  - $(this-folder)/Microsoft.Storage/stable/2019-06-01/storage.json
-  - $(this-folder)/Microsoft.Storage/stable/2019-06-01/blob.json
-  - $(this-folder)/Microsoft.Storage/stable/2019-06-01/file.json
   - $(this-folder)/Microsoft.Storage/stable/2019-04-01/storage.json
   - $(this-folder)/Microsoft.Storage/stable/2019-04-01/blob.json
   - $(this-folder)/Microsoft.Storage/stable/2019-04-01/file.json

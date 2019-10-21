@@ -58,15 +58,6 @@ input-file:
 - Microsoft.ResourceHealth/preview/2018-08-01/ResourceHealth.json
 ```
 
-### Tag: package-2018-07-01
-
-These settings apply only when `--tag=package-2018-07-01` is specified on the command line.
-
-``` yaml $(tag) == 'package-2018-07-01'
-input-file:
-- Microsoft.ResourceHealth/stable/2018-07-01/ResourceHealth.json
-```
-
 
 ---
 # Code Generation
@@ -115,7 +106,6 @@ batch:
   - tag: package-2017-07
   - tag: package-2015-01
   - tag: package-2018-08-preview
-  - tag: package-2018-07-01
 ```
 
 ### Tag: package-2017-07 and java
@@ -155,18 +145,6 @@ java:
 regenerate-manager: true
 generate-interface: true
 ```
-### Tag: package-2018-07-01 and java
-
-These settings apply only when `--tag=package-2018-07-01 --java` is specified on the command line.
-Please also specify `--azure-libraries-for-java=<path to the root directory of your azure-sdk-for-java clone>`.
-
-``` yaml $(tag) == 'package-2018-07-01' && $(java) && $(multiapi)
-java:
-  namespace: com.microsoft.azure.management.resourcehealth.v2018_08_01_preview
-  output-folder: $(azure-libraries-for-java-folder)/resourcehealth/resource-manager/v2018_08_01_preview
-regenerate-manager: true
-generate-interface: true
-```
 
 
 ## Multi-API/Profile support for AutoRest v3 generators 
@@ -184,7 +162,6 @@ input-file:
   - $(this-folder)/Microsoft.ResourceHealth/stable/2017-07-01/resourcehealth.json
   - $(this-folder)/Microsoft.ResourceHealth/stable/2015-01-01/resourcehealth.json
   - $(this-folder)/Microsoft.ResourceHealth/preview/2018-08-01/ResourceHealth.json
-  - $(this-folder)/Microsoft.ResourceHealth/stable/2018-07-01/ResourceHealth.json
 
 ```
 

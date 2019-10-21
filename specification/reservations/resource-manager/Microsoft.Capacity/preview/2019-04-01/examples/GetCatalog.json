@@ -15,16 +15,18 @@
             "P1Y",
             "P3Y"
           ],
-          "billingPlans": {
-            "P1Y": [
-              "Upfront",
-              "Monthly"
-            ],
-            "P3Y": [
-              "Upfront",
-              "Monthly"
-            ]
-          },
+          "billingPlans": [{
+              "P1Y": [
+                "Upfront",
+                "Monthly"
+              ]
+            }, {
+              "P3Y": [
+                "Upfront",
+                "Monthly"
+              ]
+            }
+          ],
           "locations": [
             "eastus"
           ],
@@ -59,14 +61,12 @@
             "P1Y",
             "P3Y"
           ],
-          "billingPlans": [
-            {
+          "billingPlans": [{
               "P1Y": [
                 "Upfront",
                 "Monthly"
               ]
-            },
-            {
+            }, {
               "P3Y": [
                 "Upfront",
                 "Monthly"
@@ -122,14 +122,12 @@
             "P1Y",
             "P3Y"
           ],
-          "billingPlans": [
-            {
+          "billingPlans": [{
               "P1Y": [
                 "Upfront",
                 "Monthly"
               ]
-            },
-            {
+            }, {
               "P3Y": [
                 "Upfront",
                 "Monthly"

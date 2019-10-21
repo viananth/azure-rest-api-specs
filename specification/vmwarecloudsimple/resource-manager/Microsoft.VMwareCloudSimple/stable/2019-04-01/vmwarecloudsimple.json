@@ -47,10 +47,10 @@
           "application/json"
         ],
         "tags": [
-          "Operations"
+          "operations"
         ],
         "summary": "Implements list of available operations",
-        "operationId": "Operations_List",
+        "operationId": "availableOperations_List",
         "parameters": [
           {
             "$ref": "#/parameters/api-version"
@@ -90,10 +90,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudNodes"
+          "dedicatedCloudNode"
         ],
         "summary": "Implements list of dedicated cloud nodes within subscription method",
-        "operationId": "DedicatedCloudNodes_ListBySubscription",
+        "operationId": "dedicatedCloudNode_ListBySubscription",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -155,10 +155,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudServices"
+          "dedicatedCloudService"
         ],
         "summary": "Implements list of dedicatedCloudService objects within subscription method",
-        "operationId": "DedicatedCloudServices_ListBySubscription",
+        "operationId": "dedicatedCloudService_ListBySubscription",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -217,10 +217,10 @@
           "application/json"
         ],
         "tags": [
-          "AvailabilityUsages"
+          "availability-usage"
         ],
         "summary": "Implements SkuAvailability List method",
-        "operationId": "SkusAvailability_List",
+        "operationId": "skusAvailabilityWithinRegion_List",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -266,16 +266,16 @@
       "get": {
         "description": "Return an async operation",
         "tags": [
-          "Operations"
+          "operation"
         ],
         "summary": "Implements get of async operation",
-        "operationId": "Operations_Get",
+        "operationId": "getOperationResultByRegion",
         "parameters": [
           {
-            "$ref": "#/parameters/subscriptionId"
+            "$ref": "#/parameters/api-version"
           },
           {
-            "$ref": "#/parameters/api-version"
+            "$ref": "#/parameters/subscriptionId"
           },
           {
             "$ref": "#/parameters/regionId"
@@ -345,10 +345,10 @@
           "application/json"
         ],
         "tags": [
-          "PrivateClouds"
+          "privateCloud"
         ],
         "summary": "Implements private cloud list GET method",
-        "operationId": "PrivateClouds_List",
+        "operationId": "PrivateCloudByRegion_List",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -394,10 +394,10 @@
           "application/json"
         ],
         "tags": [
-          "PrivateClouds"
+          "privateCloud"
         ],
         "summary": "Implements private cloud GET method",
-        "operationId": "PrivateClouds_Get",
+        "operationId": "getPrivateCloud",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -440,10 +440,10 @@
           "application/json"
         ],
         "tags": [
-          "ResourcePools"
+          "resourcePool"
         ],
         "summary": "Implements get of resource pools list",
-        "operationId": "ResourcePools_List",
+        "operationId": "resourcePoolsByPC_List",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -489,16 +489,16 @@
           "application/json"
         ],
         "tags": [
-          "ResourcePools"
+          "resourcePool"
         ],
         "summary": "Implements get of resource pool",
-        "operationId": "ResourcePools_Get",
+        "operationId": "resourcePoolByPC_get",
         "parameters": [
           {
-            "$ref": "#/parameters/subscriptionId"
+            "$ref": "#/parameters/api-version"
           },
           {
-            "$ref": "#/parameters/api-version"
+            "$ref": "#/parameters/subscriptionId"
           },
           {
             "$ref": "#/parameters/regionId"
@@ -542,10 +542,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachineTemplates"
+          "virtualMachineTemplate"
         ],
         "summary": "Implements list of available VM templates",
-        "operationId": "VirtualMachineTemplates_List",
+        "operationId": "virtualMachineTemplatesByPC_List",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -601,10 +601,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachineTemplates"
+          "virtualMachineTemplate"
         ],
         "summary": "Implements virtual machine template GET method",
-        "operationId": "VirtualMachineTemplates_Get",
+        "operationId": "virtualMachineTemplateByPC_Get",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -654,10 +654,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualNetworks"
+          "virtualNetwork"
         ],
         "summary": "Implements list available virtual networks within a subscription method",
-        "operationId": "VirtualNetworks_List",
+        "operationId": "virtualNetworksByPC_List",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -713,10 +713,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualNetworks"
+          "virtualNetwork"
         ],
         "summary": "Implements virtual network GET method",
-        "operationId": "VirtualNetworks_Get",
+        "operationId": "virtualNetworkByPC_Get",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -766,10 +766,10 @@
           "application/json"
         ],
         "tags": [
-          "AvailabilityUsages"
+          "availability-usage"
         ],
         "summary": "Implements Usages List method",
-        "operationId": "Usages_List",
+        "operationId": "UsagesWithinRegion_List",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -821,10 +821,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachines"
+          "virtualMachine"
         ],
         "summary": "Implements list virtual machine within subscription method",
-        "operationId": "VirtualMachines_ListBySubscription",
+        "operationId": "virtualMachine_ListBySubscription",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -886,10 +886,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudNodes"
+          "dedicatedCloudNode"
         ],
         "summary": "Implements list of dedicated cloud nodes within RG method",
-        "operationId": "DedicatedCloudNodes_ListByResourceGroup",
+        "operationId": "dedicatedCloudNode_ListByResourceGroup",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -954,10 +954,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudNodes"
+          "dedicatedCloudNode"
         ],
         "summary": "Implements dedicated cloud node GET method",
-        "operationId": "DedicatedCloudNodes_Get",
+        "operationId": "dedicatedCloudNode_Get",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -972,9 +972,6 @@
             "name": "dedicatedCloudNodeName",
             "in": "path",
             "required": true
-          },
-          {
-            "$ref": "#/parameters/api-version"
           }
         ],
         "responses": {
@@ -1006,10 +1003,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudNodes"
+          "dedicatedCloudNode"
         ],
         "summary": "Implements dedicated cloud node PUT method",
-        "operationId": "DedicatedCloudNodes_CreateOrUpdate",
+        "operationId": "dedicatedCloudNode_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1079,10 +1076,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudNodes"
+          "dedicatedCloudNode"
         ],
         "summary": "Implements dedicated cloud node DELETE method",
-        "operationId": "DedicatedCloudNodes_Delete",
+        "operationId": "dedicatedCloudNode_Delete",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1134,10 +1131,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudNodes"
+          "dedicatedCloudNode"
         ],
         "summary": "Implements dedicated cloud node PATCH method",
-        "operationId": "DedicatedCloudNodes_Update",
+        "operationId": "dedicatedCloudNode_Update",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1189,7 +1186,7 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.VMwareCloudSimple/dedicatedCloudServices": {
       "get": {
-        "description": "Returns list of dedicated cloud services within a resource group",
+        "description": "Returns list of dedicated cloud service within resource group",
         "consumes": [
           "application/json"
         ],
@@ -1197,10 +1194,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudServices"
+          "dedicatedCloudService"
         ],
         "summary": "Implements list of dedicatedCloudService objects within RG method",
-        "operationId": "DedicatedCloudServices_ListByResourceGroup",
+        "operationId": "dedicatedCloudService_ListByResourceGroup",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1265,10 +1262,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudServices"
+          "dedicatedCloudService"
         ],
         "summary": "Implements dedicatedCloudService GET method",
-        "operationId": "DedicatedCloudServices_Get",
+        "operationId": "dedicatedCloudService_Get",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1316,10 +1313,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudServices"
+          "dedicatedCloudService"
         ],
         "summary": "Implements dedicated cloud service PUT method",
-        "operationId": "DedicatedCloudServices_CreateOrUpdate",
+        "operationId": "dedicatedCloudService_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1374,10 +1371,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudServices"
+          "dedicatedCloudService"
         ],
         "summary": "Implements dedicatedCloudService DELETE method",
-        "operationId": "DedicatedCloudServices_Delete",
+        "operationId": "dedicatedCloudService_Delete",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1429,10 +1426,10 @@
           "application/json"
         ],
         "tags": [
-          "DedicatedCloudServices"
+          "dedicatedCloudService"
         ],
         "summary": "Implements dedicatedCloudService PATCH method",
-        "operationId": "DedicatedCloudServices_Update",
+        "operationId": "dedicatedCloudService_Update",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1491,10 +1488,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachines"
+          "virtualMachine"
         ],
         "summary": "Implements list virtual machine within RG method",
-        "operationId": "VirtualMachines_ListByResourceGroup",
+        "operationId": "virtualMachine_ListByResourceGroup",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1559,10 +1556,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachines"
+          "virtualMachine"
         ],
         "summary": "Implements virtual machine GET method",
-        "operationId": "VirtualMachines_Get",
+        "operationId": "virtualMachine_Get",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1610,10 +1607,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachines"
+          "virtualMachine"
         ],
         "summary": "Implements virtual machine PUT method",
-        "operationId": "VirtualMachines_CreateOrUpdate",
+        "operationId": "virtualMachine_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1688,10 +1685,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachines"
+          "virtualMachine"
         ],
         "summary": "Implements virtual machine DELETE method",
-        "operationId": "VirtualMachines_Delete",
+        "operationId": "virtualMachine_Delete",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1760,10 +1757,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachines"
+          "virtualMachine"
         ],
         "summary": "Implements virtual machine PATCH method",
-        "operationId": "VirtualMachines_Update",
+        "operationId": "virtualMachine_Update",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1820,10 +1817,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachines"
+          "virtualMachine"
         ],
         "summary": "Implements a start method for a virtual machine",
-        "operationId": "VirtualMachines_Start",
+        "operationId": "virtualMachine_Start",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -1891,10 +1888,10 @@
           "application/json"
         ],
         "tags": [
-          "VirtualMachines"
+          "virtualMachine"
         ],
         "summary": "Implements shutdown, poweroff, and suspend method for a virtual machine",
-        "operationId": "VirtualMachines_Stop",
+        "operationId": "virtualMachine_Stop",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -2635,8 +2632,7 @@
         },
         "location": {
           "description": "Azure region",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         },
         "name": {
           "description": "{ResourcePoolName}",
@@ -2990,7 +2986,9 @@
       "required": [
         "numberOfCores",
         "amountOfRam",
-        "privateCloudId"
+        "privateCloudId",
+        "guestOS",
+        "guestOSType"
       ],
       "properties": {
         "amountOfRam": {
@@ -3028,8 +3026,7 @@
         },
         "guestOS": {
           "description": "The name of Guest OS",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         },
         "guestOSType": {
           "description": "The Guest OS type",
@@ -3042,8 +3039,7 @@
           "x-ms-enum": {
             "modelAsString": false,
             "name": "GuestOSType"
-          },
-          "readOnly": true
+          }
         },
         "nics": {
           "description": "The list of Virtual NICs",
@@ -3189,7 +3185,9 @@
     "VirtualMachineTemplateProperties": {
       "description": "Properties of virtual machine template",
       "required": [
-        "privateCloudId"
+        "privateCloudId",
+        "guestOS",
+        "guestOSType"
       ],
       "properties": {
         "amountOfRam": {
@@ -3220,13 +3218,11 @@
         },
         "guestOS": {
           "description": "The Guest OS",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         },
         "guestOSType": {
           "description": "The Guest OS types",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         },
         "nics": {
           "description": "The list of Virtual NICs",
@@ -3286,8 +3282,7 @@
         },
         "location": {
           "description": "Azure region",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         },
         "name": {
           "description": "{VirtualNetworkName}",
@@ -3335,8 +3330,7 @@
     "VirtualNic": {
       "description": "Virtual NIC model",
       "required": [
-        "nicType",
-        "network"
+        "nicType"
       ],
       "properties": {
         "ipAddresses": {
@@ -3351,7 +3345,7 @@
           "type": "string"
         },
         "network": {
-          "description": "Virtual Network",
+          "description": "The list of Virtual Networks",
           "$ref": "#/definitions/VirtualNetwork"
         },
         "nicType": {
@@ -3387,13 +3381,6 @@
     }
   },
   "parameters": {
-    "subscriptionId": {
-      "type": "string",
-      "description": "The subscription ID.",
-      "name": "subscriptionId",
-      "in": "path",
-      "required": true
-    },
     "api-version": {
       "type": "string",
       "description": "Client API version.",
@@ -3419,7 +3406,7 @@
     },
     "regionId": {
       "type": "string",
-      "x-ms-parameter-location": "method",
+      "x-ms-parameter-location": "client",
       "description": "The region Id (westus, eastus)",
       "name": "regionId",
       "in": "path",
@@ -3432,44 +3419,51 @@
       "name": "resourceGroupName",
       "in": "path",
       "required": true
+    },
+    "subscriptionId": {
+      "type": "string",
+      "description": "The subscription ID.",
+      "name": "subscriptionId",
+      "in": "path",
+      "required": true
     }
   },
   "tags": [
     {
       "description": "Subscription life cycle",
-      "name": "Subscription"
+      "name": "subscription"
     },
     {
       "description": "Virtual machine resource operations",
-      "name": "VirtualMachines"
+      "name": "virtualMachine"
     },
     {
       "description": "Virtual networks functions",
-      "name": "VirtualNetwork"
+      "name": "virtualNetwork"
     },
     {
       "description": "VM templates functions",
-      "name": "VirtualMachineTemplates"
+      "name": "virtualMachineTemplate"
     },
     {
       "description": "available operations function",
-      "name": "Operations"
+      "name": "operations"
     },
     {
       "description": "Resource pools operations",
-      "name": "ResourcePools"
+      "name": "resourcePool"
     },
     {
       "description": "dedicated cloud nodes operations",
-      "name": "DedicatedCloudNodes"
+      "name": "dedicatedCloudNode"
     },
     {
       "description": "Azure Service object operations",
-      "name": "AzureService"
+      "name": "azureService"
     },
     {
       "description": "operations related to availability and usage",
-      "name": "AvailabilityUsages"
+      "name": "availability-usage"
     }
   ]
 }

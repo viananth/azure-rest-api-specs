@@ -36,7 +36,7 @@
           "RHEL": {
             "publisher": "RedHat",
             "offer": "RHEL",
-            "sku": "7-LVM",
+            "sku": "7-RAW",
             "version": "latest"
           },
           "SLES": {

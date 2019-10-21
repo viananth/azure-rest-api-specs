@@ -1,6 +1,5 @@
 ﻿AADDS
 aadiam
-AADP
 AATP
 abcxyz
 ABFS
@@ -130,7 +129,6 @@ autoscalesettings
 autoscaling
 Avro
 avrodeflate
-AZFW
 azns
 azpkg
 azureaccounts
@@ -159,7 +157,6 @@ backends
 backfilling
 Backoff
 backupconfig
-backupengine
 backupstorageconfig
 bacpac
 badpassword
@@ -279,7 +276,6 @@ compositeentities
 computervision
 CONCURRENTAPPEND
 Conda
-configreferences
 connectionstrings
 consumergroups
 containerid
@@ -331,8 +327,6 @@ customvision
 customvisionprediction
 customvisiontraining
 CUTOVER
-CVEs
-CVSS
 Cyrl
 databox
 Databricks
@@ -342,7 +336,6 @@ datacenters
 datadisk
 datafactory
 datafactoryv
-dataflows
 datafreshness
 datagrain
 datalake
@@ -350,7 +343,6 @@ datalakeanalytics
 datalakestore
 Datamasking
 datamigration
-datapoint
 Dataset
 datasets
 datasource
@@ -610,6 +602,7 @@ Hubspot
 hybridconnection
 hybriddata
 hybriddatamanager
+hyperdrive
 Hyperdrive
 Hyperscale
 hyperv
@@ -743,7 +736,6 @@ lifetimepoolstats
 linkedservices
 linkexpiryinminutes
 LISTAFTERID
-listbackups
 listbyrg
 listbysubscription
 listcertificates
@@ -756,7 +748,6 @@ listsas
 listsecrets
 LISTSTATUS
 listsyncfunctiontriggerstatus
-listsyncstatus
 liveevent
 liveoutput
 loadbalancer
@@ -784,7 +775,6 @@ LQUP
 LRO's
 Lucene
 Lumia
-LUNs
 machinelearning
 machinelearningcompute
 machinelearningexperimentation
@@ -1113,8 +1103,6 @@ reconfiguring
 recordset
 recordsetnamesuffix
 recordsets
-recoverypoint
-recoverypoints
 recoveryservices
 recoveryservicesbackup
 recoveryservicessiterecovery
@@ -1132,7 +1120,6 @@ regionalized
 regionproposals
 registeredidentities
 registryname
-rehydrated
 Reimage
 reimageall
 reimaged
@@ -1211,7 +1198,6 @@ rsct
 Rslp
 RSNULL
 RTMP
-RTSP
 runbook
 Runbooks
 runcounts
@@ -1296,7 +1282,6 @@ SKU's
 skus
 SLES
 Sllb
-slotcopy
 slotsdiffs
 slotsswap
 slowlog
@@ -1412,7 +1397,6 @@ tableservices
 tabletypes
 tablevaluedfunctions
 tagname
-tagsandregions
 tagvalue
 taskcompletion
 taskcounts
@@ -1442,7 +1426,6 @@ timestep
 timezones
 tinyint
 Tokenizes
-tombstoned
 toolchain
 toolset
 tooltips
@@ -1580,7 +1563,6 @@ vray
 Vrops
 vsphere
 VSTS
-VSTSRM
 VXLAN
 waagent
 WADL
