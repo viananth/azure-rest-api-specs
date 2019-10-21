@@ -282,7 +282,6 @@
   },
   "definitions": {
     "ProductDeploymentsList": {
-      "type": "object",
       "description": "List of Product Deployments.",
       "properties": {
         "value": {
