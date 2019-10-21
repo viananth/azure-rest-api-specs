@@ -9,22 +9,24 @@
     },
     "responses": {
         "200": {
-            "id": "/subscriptions/0a581108-e747-40cf-8a80-2c82ddd0438a/providers/Microsoft.Deployment.Admin/locations/global/productPackages/Microsoft.IotHubPreview.1.0.2/secrets/sslCert",
-            "name": "global/Microsoft.IotHubPreview.1.0.2/sslCert",
-            "type": "Microsoft.Deployment.Admin/locations/productPackages/secrets",
-            "properties": {
-                "secretKind": "Certificate",
-                "description": "Application SSL certificate.",
-                "expiresAfter": "P365D",
-                "secretDescriptor": {
-                    "keyLength": 3072,
-                    "alternativeDnsNames": []
-                },
-                "secretState": {
-                    "status": "NotUploaded",
-                    "rotationStatus": "None"
-                },
-                "provisioningState": "Succeeded"
+            "body": {
+                "id": "/subscriptions/0a581108-e747-40cf-8a80-2c82ddd0438a/providers/Microsoft.Deployment.Admin/locations/global/productPackages/Microsoft.IotHubPreview.1.0.2/secrets/sslCert",
+                "name": "global/Microsoft.IotHubPreview.1.0.2/sslCert",
+                "type": "Microsoft.Deployment.Admin/locations/productPackages/secrets",
+                "properties": {
+                    "secretKind": "Certificate",
+                    "description": "Application SSL certificate.",
+                    "expiresAfter": "P365D",
+                    "secretDescriptor": {
+                        "keyLength": 3072,
+                        "alternativeDnsNames": []
+                    },
+                    "secretState": {
+                        "status": "NotUploaded",
+                        "secretRotationStatus": "None"
+                    },
+                    "provisioningState": "Succeeded"
+                }
             }
         },
         "404": {}
