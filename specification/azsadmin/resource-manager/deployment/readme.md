@@ -81,11 +81,21 @@ input-file:
   - $(this-folder)/Microsoft.Deployment.Admin/preview/2019-01-01/ProductPackage.json
   - $(this-folder)/Microsoft.Deployment.Admin/preview/2019-01-01/ProductSecret.json
 ```
+---
+# Code Generation
 
-If there are files that should not be in the `all-api-versions` set,
-uncomment the  `exclude-file` section below and add the file paths.
+## C#
 
-``` yaml $(tag) == 'all-api-versions'
-#exclude-file: 
-#  - $(this-folder)/Microsoft.Example/stable/2010-01-01/somefile.json
+These settings apply only when `--csharp` is specified on the command line.
+Please also specify `--csharp-sdks-folder=<path to "SDKs" directory of your azure-sdk-for-net clone>`.
+
+``` yaml $(csharp)
+csharp:
+  azure-arm: true
+  license-header: MICROSOFT_MIT_NO_VERSION
+  namespace: Microsoft.AzureStack.Management.Deployment.Admin
+  payload-flattening-threshold: 1
+  output-folder: $(csharp-sdks-folder)/Generated
+  clear-output-folder: true
 ```
+
